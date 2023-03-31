@@ -1,0 +1,103 @@
+Primitive ve complex types:
+-Primitive data türleri tek bir değeri tutabilen türlerdir (int, bool, string vb.)
+-Complex data türleri içerisinde birden fazla değer tutabilen türler (classes)
+
+İsimlendrme kuralları:
+-Sınıf veya fonksiyon oluşturulcağı zaman PascalCase kullanılmalı
+-Değişkenler, fonksiyonlara argümanlar oluşturulcağı zaman camelCase kullanılmalı
+-Eğer değeri sabit kalıcak değişkenler kullanılcaksa programın başında scream case kullanılarak oluşturulmalılar
+-Değişkenlerin isimleri mantıklı olmalı, gereksiz kısatmalar kullanılmamalı.
+
+Value and reference types:
+-Value types memory'de stackte kendi datalarıyla tutulurlar(int, struct, enum vb.). 
+ Örneğin int x = 5; satırı execute olunca stackte türü int, ismi x ve değeri 5 değişken için hafıza açılır
+
+-Reference türleri memory'de heap de tutulurlar ancak developer olacak heap'e direk erişim olmadığı için memory'de 
+ stack kısmında heap'teki adresi işaret eden bir referans oluşturulur.
+ Örneğin student class'ımız olsun. Student s = new Student(); dediğimiz zaman stackte s adıyla bir referans
+ oluşturulur. Bu referans heap'teki asıl nesneyi işaret eder.
+
+Null vs empty string arasındaki farklar:
+-Null string değeri olmayan stringdir. Örneğing string x; dediğmiz zaman x'in değeri nulldur
+-Empty string ise 0 karakterden oluşan stringdir. Örneğin string z = "";
+
+Deep copy vs shallow copy:
+-Deep copy, değer türleri için default kopyalama yöntemidir.
+-Deep copy yapıldığı zaman veri çoğalır.
+ Örneğin int x = 5; ve int y = x; dediğimiz zaman hafızada değeri x inki ile aynı olan(5) türü int, adı y
+ olan yeni bir alan açılır. Yani sonuç olarak hazıfada 2 tane değişken için 2 tane 5 vardır.
+ Mesela sonradan int y = 6; dedik. Bu işlem x'in değerini değiştirmez çünkü x ile y arasında bir ilişki yoktur.
+
+-Shallow copy, referans türleri için default kopyalam yöntemidir.
+-Birden fazla referansın bir nesneyi işaret etmesidir.
+-Shallow copy yapıldığında veri artmaz.
+ Örneğin Student s1 = new Student(); Student s2 = s1; dediğmiz zaman heap'te yeni bir nesne oluşturulmaz.
+ s2, s1'in işaret ettiği nesneyi işaret etmeye başlar.
+ Eğer sonradan s2 yi değiştirmek istediğmizde bu işle s1 i de etkiler çünkü bu ikisi ilişkilidir.
+ Aynı nesneyi işaret ederler.
+
+Immutable ve mutable objeler:
+-Immutable objeler oluşturlduktan sonra değeri değiştirilemeyen objelerdir. (string vb.)
+-Mutable objeler oluşturulduktan sonra değeri değiştirilebilen objelerdir (int vb.)
+-String interning; eğer aynı stringe sürekli aynı değeri atamya çalışıyorsak, sürekli memory'de yer açılmaktansa
+ tek bir string referans edilir.
+ Eğer string değiştirmek isteniyorsa StringBuilder kullanılmalı
+ Örneğin;
+--------------------------------------------------
+ StringBuilder s = new StringBuilder("hi");
+ for (int i = 0; i < 5; i++)
+ {
+	s.Append("hi");
+ }
+ Console.WriteLine(s);
+ Bu programın çıktısı şöyle olucaktır;
+ => hihihihihihi (toplam 6 tane hi)
+--------------------------------------------------
+ Eğer böyle değilde normal string kullanmak isteseydik;
+--------------------------------------------------
+ string s = "hi";
+ for (int i = 0; i < 5; i++)
+ {
+	s += "hi";
+ }
+ Console.WriteLine(s);
+ Bu programın çıktısı şöyle olucaktır;
+ => hihihihihihi
+ Çıktı aynı fakat memory'de [hi, hihi, hihihi, hihihihi, hihihihihi] olmak üzere 5 gereksiz değer kalır.
+ (Bunlar garbage collectorler tarafından toplanırlar)
+--------------------------------------------------
+ Peki stringler neden immutabledırlar;
+ Çünkü string aslında bir karakter dizisidir ve dizilerin boyutları fixedtir. Bundan dolayı stringi
+ değiştirmek istediğimiz zaman bilgisayar yeni bir dizi oluşturur. Eski string ise garbage collector lar tarafından toplanırlar.
+
+Access Modifiers;
+-Önemi : classlara, fonksiyonlara veya değişkenlere nasıl ve nerden erişilebiliceğini belirler.
+-Eğer classtan önce hangi access modifier olucağını belirtmezsek, kendiliğinden internal olarak belirlenir
+-Fieldlar eğer kendilerinden önce bir access modifier tanımlanmamışsa private'dır.
+ => Internal: eğer bir obje internal etiketine sahipse sadece o namespace içerisinde kullanılabilir
+ => Public: eğer bir obje public etiketine sahipse o proje içerisinde her yerden erişilebilir.
+ => Private: eğer bir obje private etiketine sahipse onun üstündeki süslü parantezlerin içerisinde erişilebilir. 
+             (Bir diğer değişle sadece tanımlandığı blok içerisinde geçerlidir.)
+ => Protected: classın iheritance verdiği yerde de geçerlidir.
+ 
+
+.NET nedir?
+-Microsoft'un geliştridği, pek çok programlama dili ile uygulama geliştirmeye yarayan bir ortamdır.
+-.NET ile windows uygulamaları, veri tabanı uygulamaları, windows azure ile cloud uygulamaları, ASP.NET kullanarak 
+ web uygulamaları vb. geliştirilebilir.
+-.NET ile geliştirilen uygulamalar dilden ve platformdan bağımsızdır.
+-Örneğin C# ile yazdığınız bir kod derleyici ile ortak dil altyapısına (Common Language Infrastructure-CLI) uyarlanır. 
+ Buradan sonra ortak ara dil derleyicisi (Common Intermediate Language-CIL) kodu platforma uygun dile dönüştürmek 
+ üzere ortak dil çalışma zamanı derleyicisine (Common Language Runtime-CLR)  gönderir. CLR’ in işlevi CIL tarafından 
+ gönderilen kodu makine diline dönüştürmektir. Böylece C# (yada diğer platform dilleri ile) yazılan kod derlenmiş 
+ ve çalıştırılabilir hale getirilmiş olur.
+.NET CORE nedir?
+-.Net Core, farklı işletim sistemlerinde (Windows, Macos & Linux ) uygulama geliştirmek için gerekli olan ortamı hazırlar.
+-.NET Framework ile sadece windows işletim sisteminde uygulama geliştirebilirken .net core ile 
+  cross platform yani her işletim sisteminde uygulama geliştirip çalıştırabiliriz.
+
+REBUILD : Derlenmiş dosyaları tamamen siler. Dosya değişikliğine bakmaksızın seçilen projeyi 
+         tekrardan derler ve dll,exe,pdb… dosyalarını oluşturur.
+BUILD   : Projede sadece değişiklik olan dosyaları derler ve dll,exe.. dosyaları oluşturur.
+CLEAN   : Derlenmiş dosyaları siler.
+REBUILD = BUILD+CLEAN
