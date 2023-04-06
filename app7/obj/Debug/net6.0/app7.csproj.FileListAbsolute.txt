@@ -1,0 +1,15 @@
+C:\Users\STJ80354\source\repos\app1\app7\bin\Debug\net6.0\app7.exe
+C:\Users\STJ80354\source\repos\app1\app7\bin\Debug\net6.0\app7.deps.json
+C:\Users\STJ80354\source\repos\app1\app7\bin\Debug\net6.0\app7.runtimeconfig.json
+C:\Users\STJ80354\source\repos\app1\app7\bin\Debug\net6.0\app7.dll
+C:\Users\STJ80354\source\repos\app1\app7\bin\Debug\net6.0\app7.pdb
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.dll
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\refint\app7.dll
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.pdb
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\app7.genruntimeconfig.cache
+C:\Users\STJ80354\source\repos\app1\app7\obj\Debug\net6.0\ref\app7.dll
