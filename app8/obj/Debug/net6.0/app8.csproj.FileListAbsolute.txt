@@ -1,0 +1,15 @@
+C:\Users\STJ80354\source\repos\app1\app8\bin\Debug\net6.0\app8.exe
+C:\Users\STJ80354\source\repos\app1\app8\bin\Debug\net6.0\app8.deps.json
+C:\Users\STJ80354\source\repos\app1\app8\bin\Debug\net6.0\app8.runtimeconfig.json
+C:\Users\STJ80354\source\repos\app1\app8\bin\Debug\net6.0\app8.dll
+C:\Users\STJ80354\source\repos\app1\app8\bin\Debug\net6.0\app8.pdb
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.dll
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\refint\app8.dll
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.pdb
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\app8.genruntimeconfig.cache
+C:\Users\STJ80354\source\repos\app1\app8\obj\Debug\net6.0\ref\app8.dll
