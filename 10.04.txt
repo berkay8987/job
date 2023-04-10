@@ -1,0 +1,118 @@
+SQL
+- SQL (Structured Query Language); vertabanımızda bulunan tablolardaki verileri çekip görüntülemek için kullanılır.
+  Bunun yanı sıra tablo yaratmak veya varola tablolar üzerinde modifiye etmek amacıyla kullanılır.
+- MSSQL, Oracle, MySql en çok kullanılan database management sistemleridir.
+
+Transact SQL (T-SQL)
+- Transact SQL yani T-SQL Microsoft SQL Server vertabanı için kullanılan sorgulama diline verilen isimdir. Oracle veritabanında kullanılan SQL ile arasında komut farkları bulunmaktadır.
+  T-SQL ile sorguları çalıştırmak için Managament Studio ile SQL Server'a erişmeniz gerekmektedir. 
+
+SSMS (Sql Server Management Studio)
+- Sql Management, Microsoft tarafından geliştirilmiş bir veri platformudur. 
+- SSMS uygulaması verilerin bütünlük e güven içerisinde depolanmasına ve aynı anda birden fazla kullanıcı tarafından erişilmesine olanak sunan kurumsal çaplı ve ilişkisel bir veri tabanı yönetimi sistemidir.
+
+
+SQL'deki veri tipleri;
+
+Metinsel Veri Tipleri:
+- char: Unicode desteklemeyip char(n) şeklinde kullanılırlar. 8000 karaktere kadar değer alabilirler. Belirtilenden az karatker girilse bile girş yapılan boyut kadar yer kaplar
+- nchar: Unicode destekler. Chardan farklı olarak max 4000 karaktere kadar değer alabilir.
+- varchar: Chardan farklı olarak verinin boyutu kadar yer kaplar. 8000 karaktere kadar depolama yapabilir. varchar(MAX) ile 2gb a kadar depolama yapılabilir.
+- nvarchar: Unicode destekli varchar, 4000 karakter max.
+- text: Belirtilende az değer girilse bile boyutu kadar yer kaplar. 2gb'a kadar metinsel veir depolar.
+- ntext: Unicode destekli text.
+
+Sayısal Veri Tipleri;
+- bit: bir byte uzunluğunda tam sayı veri tipidir. Genellikle evet hayır şeklinde mantıksal bilgileri tutmak için kıllanılır.
+- int: 4 byte büyüklüğünde , +- 2 milyar arasında değer tutabilen veri tipidir.
+- bigint: 8 byte büyüklüğünde, +- 2 üzeri 63 arasında değer tutabilen tam sayı veri tipidir.
+- smallint: 2 byte büyüklüğünde, +- 32.768 arasında değer tutabilen tam sayı veri tipidir.
+- tinyint: 1 byte büyüklüğünde, 0-255 arası tam sayı veriler için kullanılır.
+- decimal/numeric: Bu veri tipinde sağlanacak sayının basamk sayısı tanımlanabilir. +-38 basamak arası verileri depolayabilir. +-10 üzeri 38 arası ondalık ve tam sayı türünde veri saklar.
+
+=> Bunların dışında da bir sürü veri tipi bulunmaktadır, ihtiyaç olunduğu zaman bakılabilir.
+
+SQL KOMUTLARI
+- SQL Komutları kullanım amacına göre 3 gruba ayrılır;
+
+=> Data Manipulation Language - DML
+   - Veritabanına yeni veri ekleme, var olanları güncelleme, silme işlemleri DML kullnara yapılır. 
+   - DELETE
+   - SELECT
+   - UPDATE
+   - INSERT
+=> Data Definition Language - DDL
+   - Vertabanı veya tablo oluştuırmayı, silmeyi ve üzerinde değişiklik yapmayı sağlayan ifadelerdir.
+   - CREATE
+   - ALTER
+   - DROP
+=> Data Control Language - DCL
+   - Veritabanında bir kullanıcıyı, rolünü ve izinlerini düzenlenmesini sağlayan ifadelerdir.
+   - GRANT
+   - DENY
+   - REVOKE
+
+
+SELECT:
+- Select komutuyla veri tabanındaki veriyi çekebiliriz. Veri tabanındaki hangi tablodan veri çekileceğini ise FROM'dan sonra beltirmeliyiz.
+  Örneğin;
+  Elimizde CUSTOMER adında içinde CustomerName, City, Gender... gibi kolonlar bulunduran bir databasemizi var.
+  Bu databaseki customerların cinsiyetlerini çekmek için; SELECT Gender FROM CUSTOMER
+  Bu databesedeki customerların şehirlerini çekmek için; SELECT City FROM CUSTOMER
+  Eğer veritabanındaki bütün verileri çekmek istyorsak; SELECT * FROM CUSTOMER (bütün veritabanını çekioruz.)
+
+WHERE:
+- Sorgulamalarımıza where keywordunu ekleyerek daha spesifik verileri çekebiliriz
+  Örneğin;
+  Yine elimizde CUSTOMER adında bir veritabanı olduğunu düşünelim.
+  Bu veritabanından Adanalı olup erkek olanların isimlerini çekmek istediğimizde; SELECT CustomerName FROM CUSTOMER WHERE City="Adana" AND Gender='E'
+
+BETWEEN:
+- Belirli aralıktaki verileri çekmemizi sağlar
+  Örneğin; SELECT * FROM CUSTOMER WHERE ID BETWEEN 10 AND 15
+
+DISTINCT:
+- Örneğin SELECT City FROM CUSTOMER dediğimiz zaman eğer bir şehirden birden fazla var ise onlarda gelicektir.
+  Muhtemel çıktı örneği; Adana, Hatay, Adana, Mersin, Samsun, Adana....
+  Sorguya DISTINCT ekleyerek tekrara düşen verileri eleyebiliriz; SELECT DISTINCT City FROM CUSTOMER
+  Muhtemel çıktı örneği; Adana, Hatay, Mersin, Samsun .....
+
+SELECT TOP:
+- Bu komutu kullanarak ilk n veriyi getir diyebilirz.
+  Örneğin; SELECT TOP 3* FROM CUSTOMER bize customer databasesindeki ilk 3 veriyi getiricektir.
+
+INSERT INTO:
+- Veri tabanına veri eklememizi sağlar
+  Örneğin; INSERT INTO CUSTOMER([CustomerName], [City]) VALUES ('Berkay', 'Hatay')
+  Customer databasesinde CustomerName ve City den başka kolonlar daha olduğu için ve biz o kolonlara değer atamadığımız için null olarak kalıcaklardır.
+
+UPDATE, SET:
+- Veritabananında hali hazırd olan bir veriyi değiştirmemizi sağlar
+  Önreğin Berkay adlı kişinin şehrini değştirmek istediğimiz zaman; UPDATE CUSTOMER SET City='Istanbul' WHERE CustomerName='Berkay' ...
+
+DELETE:
+- Veri tabanında bulunan belli alanları silmek için kullanılır. Tabloda id otomatik olarak artan bir veriyse delete komutuyla silinmesine rağmen id kaldığı yerden artmaya devam eder.
+  Berkay isimli kişi silmek istediğmiz zaman; DELETE FROM CUSTOMER WHERE CustomerName='Berkay'
+
+ORDER BY:
+- Çektiğimiz verileri sıralamamızı sağlar
+  Örenğin; SELECT * FROM CUSTOMER ORDER BY City
+
+CREATE:
+- Db oluşturmak için kullanılır. CREATE DATABASE deneme
+
+ALTER:
+- DB adını, dosya konumunu ayarını değiştirebilirz.
+  Örenğin elimizde adı deneme olan bir db olsun, adını değştirmek istediğmizde; ALTER DATABASE deneme MODIFY NAME = deneme2
+
+DROP:
+- Veritabanın silmeye yarar. DROP DATABASE deneme
+
+
+
+
+
+
+
+
+
