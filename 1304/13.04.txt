@@ -1,0 +1,120 @@
+Sql Joins:
+- Join yöntemlerini iki veya daha fazla tabloyu aynı anda sorqulamak için tercih ederiz.
+- Sorguda kullanılan tablolar tamamen aynı tablolar olduğu gibi aynı tabloda olabilir (Self Join).
+- Join yazım biçimi genel olarak;
+  FROM ilk_tablo join_türü ikinci_table ON join_koşulu
+- join_türü ifadesi hangi join seçeneğinin (inner, outer, cross) kullanılacağını, joşn_koşulu is her iki tabloya ait satırların hangi sınırlamayla ilişilendirileceğini belirtir.
+- Birleştirilen iki tablodan hangisinin baskın olacağı veya hangisinden hangi alanların okunacağı tercih edilen Join türüne göre değişiklik arz eder. 
+- Bu amaçla sql server INNER OUTER VE CROSS olmak üzere 3 join türünü destekler.
+
+
+Örnek olarak kullanılcak DB:
+
+TABLE Ogrenci;                    TABLE Danisman;           TABLE OgrenciDanisman;
+- OgrenciID INT			    - DanismanID INT		- OgrenciDanismanID INT
+- AdSoyad varchar			    - AdSoyad varchar		- OgrenciID INT
+										- DanismanID INT
+
+
+=> INNER JOIN: SQL server'de varsaylıan seçenek olup iki tabloyu JOIN ifadesinde belirtilmiş olan kolon veya kolonların eşitliğine göre birleştirir. Bu seçenekte tablolar her iki tarafta ortak olan kolonlar üzerinden birleştirilir. Tablo 
+		   arasındaki eşitlik için genellikle = veya <> operatörleri kullanılır. Bire bir ilişki için tercih edilir. Yazım biçimi olarak INNER JOIN veya sadece JOIN kullanılır.
+		   Örneğin yukarıda verilen DB'de hem Ogrenci hemde OgrenciDanisman tablosunda olan öğrenci kayıltlarını çekmek için kullanılabilir;
+
+  		   SELECT O.* FROM Ogrenci O
+		   INNER JOIN OgrenciDanisman OD
+   		   ON O.OgrenciID=OD.OgrenciID;
+
+	    	   Birden fazla join yapılabilir. Mesela öğrencilerin hangi danışmanlara atandığını yazalım;
+  	 	   
+		   SELECT O.OgrenciID, O.AdSoyad, D.DanismanID, D.AdSoyad FROM Ogrenci O
+		   INNER JOIN OgrenciDanisman OD
+		   ON O.OgrenciID=OD.OgrenciID
+		   INNER JOIN Danisman D
+		   ON OD.DanismanID=D.DanismanID;
+
+=> OUTER JOIN: INNER JOIN gibi iki tablo arasında ortak kolomlar üzeriden bağlantı kurar farklı olarak tablolarda karşılığı olmayan satırlar da gelir. İkinci tabloda karşılığı olmayan satırlar NULL olarak döner. Bu JOIN seçeneğini daha 		   çok bir tabloda olup diğer tabloda olmayan kayıtları listelemek için terchi ederiz. OUTER JOIN seçeneğinde hangi tablonun baskın olacağı LEFT JOIN (LEFT OUTER JOIN), RIGHT JOIN (RIGHT OUTER JOIN) veya FULL JOIN (FULL 			   OUTER JOIN) bu şekilde belirlenir. 		   
+		   Bu join seçeneğinde karşılğı olmayan satırlar WHERE bölümünde ilgili kolonların NULL değeriyle karşılaştırımlasıyal bulunur.
+
+   => LEFT JOIN veya LEFT OUTER JOIN: Left join sorguda belirtilen ilk tablodan tüm satırları içerecek şekilde iki tablonun verilerini almak istediğinizde kullanılır
+						  Örneğin;
+  						  
+						  SELECT * FROM Ogrenci O
+						  LEFT JOIN OgrenciDanisman OD
+						  ON O.OgrenciID=OD.OgrenciID;
+				
+						  Mesela DB'de herhangi bir danışmana atanmamış öğrenci var ise şu şekilde bir sorgu yazabiliriz;
+
+						  SELECT * FROM Ogrenci O
+						  LEFT JOIN OgrenciDanisman OD
+						  ON O.OgrenciID=OD.OgrenciID
+						  WHERE OD.DanismanID IS NULL;
+
+   => RIGHT JOIN veya RIGHT OUTER JOIN: Right join, left join ile aynıdır sadece ikinci tablodaki bütün satırlar gelir.
+						    Önceki örneğe benzer olarak öğrencisi olmayan danışmanlar yazılabilir;
+ 
+						  SELECT * FROM OgrenciDanisman OD
+						  RIGHT JOIN Ogrenci O
+						  ON OD.OgrenciID=O.OgrenciID
+						  WHERE OD.DanismanID IS NULL;
+
+   => FULL JOIN veya FULL OUTER JOIN: Bu seçenekte hem sağ hem de soldaki tablonn tüm satırları listelenir. Her iki tabloda da karşılığı olmayan satılar null olarka döner. 
+
+=> CROSS JOIN: Kartezyen çarpım olarak da bilinen bu seçenekte ortak bir alan belirtilmesine gerek kalmadan iki tablo arasında tüm eşleştirilemeleri listeler. Bunu soldaki tablodaki her bir satıra karşılık sağdaki tablonun tüm    			   satırlarının döndürerek gerçekleştirir.
+
+
+SqlConnection in C#
+- C# kullanarak sql servera bağlanamk için SqlConnection kullanırız.
+- Uygulamanın başına using System.Data.SqlClient; eklenmelidir.
+- Uygulama içerisinde sql bağlantısını şöyle oluştururuz;
+
+  string connectionString = "Data Source=ServerName;Initial Catalog=DatabaseName;User Id=Username;Password=Password";
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+	connection.Open();
+	// do some stuff
+  }
+
+- using kullanmamızın sebebi using bittikten sonra bağlantının otomatik olarak kapatılması.
+- Eğer using kullanmasak sürekli connection.Close() dememiz gerekicekti.
+
+- INSERT, DELETE gibi işlemler yapabilmek için SqlCommand kullanırız.
+  SqlCommand command = new SqlCommand("INSERT INTO Ogrenci VALUES (1, 'Berkay')", connection); gibi
+
+- Eğer SELECT ile gelicek veriyi okumak istersek SqlDataReader kullanabiliriz.
+
+  SqlCommand command = new SqlCommand("SELECT * FROM Ogrenci", connection);
+  SqlDataReader reader = command.ExecuteReader();
+
+  while (reader.Read())
+  {
+	Console.WriteLine($"{reader["AdSoyad"].ToString()}, {reader["OgrenciId"].ToString()}");
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
