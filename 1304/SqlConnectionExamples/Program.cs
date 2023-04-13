@@ -8,7 +8,7 @@ namespace SqlConnectionExamples
     {
         static void Main(string[] args)
         {
-            string connectionString = "Data Source=NB320882;Initial Catalog=demo;User ID=sa;Password=5xgkW8RUZr";
+            string connectionString = "Data Source=NB320882;Initial Catalog=demo;User ID=sa;Password=PASSWORD";
             // string queryString = "INSERT INTO Ogrenci VALUES (10, 'Berkay')";
             // string queryString = "UPDATE Ogrenci SET OgrenciId=5 WHERE AdSoyad='Berkay'";
             string queryString = "SELECT * FROM Ogrenci";
