@@ -1,0 +1,159 @@
+Datatable kullanarak SqlConnection'dan gelen veriyi yazdırmak.
+- Öncellikle yeni bir datatable oluşturalım; DataTable table = new DataTable();
+- table içerisinde rows ve columns bulundurur.
+- Sonra bir sqldatadapter oluşturalım; SqlDataAdapter adapter = new SqlDataAdapter(command); // type(command) => SqlCommand
+- Sql tarafında döndürülen verileri datatable'ın içersiinde yazalım; adapter.Fill(table);
+- Daha sonra konsola yazdırmak için;
+  
+  foreach (DataRow row in table.Rows)
+  {
+	foreach (DataColumn column in table.Columns)
+	{
+		Console.Write(row[column] + "\t");
+	}
+	Console.WriteLine();
+  }
+
+
+Bazı SqlConnection Methodarı;
+
+-Open(): SqlConnection sınıfını kullanarak bir veritabanı bağlantısını açar.
+
+-Close(): SqlConnection sınıfını kullanarak açılan bir veritabanı bağlantısını kapatır.
+
+-Dispose(): SqlConnection sınıfını kullanarak açılan bir veritabanı bağlantısını ve diğer kaynakları serbest bırakır.
+
+-CreateCommand(): Bağlantı üzerinde yeni bir SqlCommand nesnesi oluşturur.
+
+-BeginTransaction(): SqlConnection sınıfını kullanarak bir veritabanı işlemi başlatır.
+
+-ChangeDatabase(): SqlConnection sınıfını kullanarak farklı bir veritabanına bağlanır.
+
+-GetSchema(): Bağlantı üzerindeki veritabanı şeması bilgilerini alır.
+
+-OpenAsync(): SqlConnection sınıfını kullanarak bir veritabanı bağlantısını asenkron olarak açar.
+
+-CloseAsync(): SqlConnection sınıfını kullanarak açılan bir veritabanı bağlantısını asenkron olarak kapatır.
+
+-DisposeAsync(): SqlConnection sınıfını kullanarak açılan bir veritabanı bağlantısını ve diğer kaynakları asenkron olarak serbest bırakır.
+
+
+SQL veritabanı işlemlerini yapmak execute, executeScalar, executenonquery gibi bir çok method kullanılabilir;
+
+- Execute: Bu yöntem, bir SQL sorgusunu yürütmek için kullanılır ve herhangi bir sonuç döndürmez. Genellikle INSERT, UPDATE veya DELETE gibi değişiklik yapmak için kullanılır.
+  Örneğin:
+
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+	connection.Open();
+      string query = "UPDATE Customers SET City='Istanbul' WHERE Country='Turkey'";
+      SqlCommand command = new SqlCommand(query, connection);
+      command.Execute();
+  }
+
+  Yukarıdaki kod, Customers tablosundaki Türkiye'deki müşterilerin şehirlerini İstanbul olarak değiştirir.
+
+- ExecuteScalar: Bu yöntem, bir SQL sorgusu çalıştırdığında yalnızca tek bir değer döndürür. Genellikle bir COUNT, SUM veya MAX işlemi gibi bir işlem sonucunu elde etmek için kullanılır.
+  Örneğin:
+
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+      string query = "SELECT COUNT(*) FROM Customers WHERE Country='Turkey'";
+	SqlCommand command = new SqlCommand(query, connection);
+      connection.Open();
+      int count = (int)command.ExecuteScalar();
+      Console.WriteLine("Number of customers in Turkey: " + count);
+  }
+
+  Yukarıdaki kod, Customers tablosundaki Türkiye'deki müşteri sayısını alır ve konsola yazdırır.
+
+- ExecuteNonQuery: Bu yöntem, bir SQL sorgusu çalıştırdığında hiçbir değer döndürmez. Genellikle bir CREATE, DROP veya ALTER işlemi gibi bir veritabanı nesnesi üzerinde değişiklik yapmak için kullanılır.
+  Örneğin:
+
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+      string query = "CREATE TABLE Orders (OrderId int, OrderDate date, CustomerId int)";
+      SqlCommand command = new SqlCommand(query, connection);
+      connection.Open();
+      command.ExecuteNonQuery();
+  }
+
+  Yukarıdaki kod, yeni bir Orders tablosu oluşturur ve bu tabloya üç sütun ekler: OrderId, OrderDate ve CustomerId.
+
+
+- SELECT ile yapılan sorgulardan dönen verileri datatable kullanarak okuyabileceğimiz gibi SqlDataReader ve ExecuteReader 'da kullanabilriiz.
+
+  using (SqlConnection connection = new SqlConnection(connectionString))
+  {
+      string query = "SELECT * FROM Customers";
+      SqlCommand command = new SqlCommand(query, connection);
+      connection.Open();
+      SqlDataReader reader = command.ExecuteReader();
+          
+      while (reader.Read())
+	{
+                  Console.WriteLine("{0}\t{1}\t{2}", reader.GetInt32(0), reader.GetString(1), reader.GetString(2));
+      }
+  }
+
+
+- SqlDataReader nesnesi, veritabanından bir satır okuduğunda, her sütunu GetInt32(), GetString() veya GetXXX() gibi uygun bir yöntemle okuyabilirsiniz. Bu yöntemlerin parametreleri, sütunun sırası veya adıdır.
+
+
+Dapper
+- Dapper, .NET VE .NET CORE uygulamaları için StackOverflow tarafından geliştirilen açık kaynaklı bir ORM kütüphanesidir.
+- Dapper geliştiricileri db'den daha hızlı ve daha kolay bir şekilde veriye erişmelerini sağlar.
+- Dapper raw sql queryleri yazmayı, verileri objelere maplemeyi vbvb sağlar.
+- Dapper hafif ve hızlı, olduğundan dolayı düşük gecikme ve yüksek performans gerektiren uygulamalar için ideal bir seçimdir.
+- Hem async hem async olmayan hem de birden çok queryi aynı zamanda işleyebilir.
+- Ayrıca dapper, SQL Injection ataklarına karşı koruma sağlar.
+- Dapper bir ORM'den çok micro ORM sınıfına girer. Tam bir ORM kütüphanesinin (EntityFramework gibi) belli bir kısmını gerçekleştirebilir.
+- Dapper diğer küpüthanelere göre daha kolay implement edilebilmesi ve hızlı olmasıyla bilinir.
+- Dapper ORM deki O VE M harflerine daha çok odaklanır. ObjectMapping
+- Dapper read-only dataların çok sık bir şekilde istendiği zaman iyi bir seçim olabilir. ayrıca hafızada komplex obje grafiklerinin tutulmuycağı stateless seneryolarda da bir seçimdir.
+
+- Dapper'ı kullanırken veritabanıyla aynı olucak şekilde bir sınıf oluştururz.
+- Örneğin veritbananda şöyle bir table oluşturduğumuzu düşünleim;
+  CREATE TABLE Ogrenci (
+	OgrenciId INT NOT NULL PRIMARY KEY,
+	AdSoyad varchar(50)	
+  )
+
+- Programımızda şöyle bir sınıf oluştururz.
+  class Ogrenci
+  {
+	public int OgrenciId { get; set; }
+	public string AdSoyad { get; set; }
+  }
+
+- Mesela INSERT INTO yapıcağımımz zaman şöyle kullanırız;
+  
+  string query = "INSERT INTO Ogrenci([OgrenciId], [AdSoyad]) VALUES (@OgrenciId, @AdSoyad)";
+  connection.Execute(
+	query,
+	new Ogrenci { OgrenciId=6, AdSoyad="Berkay" } // Burda Ogrenci class'ını kullandık
+  );
+
+
+Cap theorem
+- CAP => Consistency, Availability, Partition Tolerance
+- Bu teoreme göre bir db bu 3 şeyden max 2 sini barındırabilir.
+- Yani hem tutarlı hem de sürekli erişilebilir bir db partition tolerance olamaz vbvb..
+
+s
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
