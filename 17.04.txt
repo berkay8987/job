@@ -1,0 +1,231 @@
+- Geçmiş günlerin notların okundu.
+
+DRY, KİSS, YAGNİ NEDİR?
+
+- Hepimiz bir proje geliştirirken özellikle araya zaman girdiğinde nerede ne yaptığımızı unuttuğumuz veya takım arkadaşımızın kodunu anlamadığımız olur. Bu sorunları en aza indirmek için tasarlanmış bazı programlama prensipleri vardır. Bu  
+  prensipler; güzel, açık ve sürdürülebilir kod yazmak istiyolarsa mühendislerin program uygulaması sırasında izlemeleri gereken bir dizi öneridir.
+
+- DRY: Dont Repeat Yourself.
+  => Kod yazarken kendimizi sürekli tekrara sokmamız gerekir. Hem kodun daha düzenli olması hem de daha sonradan başkaları tarafından okunucağı zaman daha anlaşılabilir olmasını ve hem de zamandan tasaffur sağlatır.
+  => Çok fazla kendimzi tekrar edersek kodun test edilebilirliği ve sonrasında o işlem için tekrar kullanılabilirlik açısından problemlere karşılaştığımız yazılımda çok kullanılan spagetti koda döner.
+  => Eğer aynı amaca hizmet eden iki veya daha fazla kod varsa bunları soyutlama yoluyla ortadan kaldırılmasını belitirtir ve tekrarlama otomasyon yoluyla ortadan kaldırılır.
+
+- KISS: Keep It Simple, Stupid
+  => Tasarım veya tasarımmların ve/veya sistemlerin mümkün olduğunca basit olması gerektiğini belirtir.
+  => Kiss prensibini uygulamaya koyabilmek için önce sorununuzu birkaç küçük soruna bölün
+  => Yöntemlerinizi küçük tutun. Her yöntem yalnızca bir sorunu çözmelidir, pek çok kullanım durumunu değil.
+  => Ve her şeyi mümkün olduğunca basit tutmaya çalışın
+
+- YAGNI: You Ain't Gonna Need It
+  => Yagni ilkesi, özelliklerin yalnızca gerektiğinde eklenmesi gerektiğini belirten bir yazılım geliştirme uygulamasıdır. Aşırı programlama (XP) felsefesinin bir parçası olarak, istenen artan sürüm sıklığını kolaylaştırmak için  
+     geliştirmedeki fazlalığı ve verimsizliği ortadan kaldırır.
+  => Geliştirme aşamasında ileride lazım olacağını düşündüğümüz kısımları projemize eklemek isteyebiliriz. İşte tam burada YAGNI bize dur diyor. Bu tür işlemler geliştirme sırasında vakit kaybı olmasının yanı sıra yanlış öngörülme 
+     sonucu ileride de tekrar bir ek çaba gerektirecektir. Ne kadar iyi analiz edip sürecin geliştirildiği düşünülse de bu pek öyle çıkmaz. Bunun sonucunda harcanan analiz, programlama ve test etme süreleri için boş yere vakit kaybetmiş   
+     oluruz.
+  => YAGNI, kullanılmayacak özelliklere zaman harcamaktan kaçınmaya yardımcı olduğundan, bir programın ana özellikleri daha iyi geliştirilir ve her sürümde daha az toplam zaman harcanır. Worse is Better ilkesine çok benzeyen yagni, 
+     ekstra özelliklerin geliştirlmesine karşıdır ve özellik kaymasını önlemeye yardımcı olur.
+     
+- SoC: Seperation of Concerns
+  => SoC, yazılımdaki elemanların kendilerine özel olmasını, sorumlulukların kendilerine ait olup, başka elemanlar ile paylaşmamasını söyler. 
+  => Sorumlulukların ayrı olmasının gerekliliği bu prensibin altını çizdiği temek noktadır. 
+  => Yazılımı geliştirirken, "sınır" diyebiliceğimiz kavramlar bu sorumlulukları birbirinde ayıran en net ifadeler olabilir.
+  => Genelde bu sorumlulukları belirlerken çok küçük parçalara kadar inmeye çalışırız. Çok küçük parçalardan daha önemli olan sorumluluk kümelerinin net ve ayrı olabilmesidir. Einstein'in "Make everything as simple as possible but not 
+     simpler" lafına benzer şekilde sorumlulukları olabildiğince küçük parçalara ayır ama daha küçültme. Benzer şekilde sorumluluklarıda küçük parçalara ayır ama daha küçültme...
+  => Sorumluluk kümelerini iyi bir şekilde oluşturmazsak, ayrık ayrık bir sürü parça sisteminde kaybolur gider. 
+  => Yazılım içindeki bileşenlerin birbirine bağlılık derecesi (coupling) ve bileşenler içerisindeki sorumluluk ilişkisi (cohesion), SoC prensibi için önemli iki kavramdır. Bileşenlerin bağlılık derecesi düşük olması ve bir bileşen
+     içindeki sorumluluk ilişkisinin yüksek olması her zaman tercih edilmelidir. Yani low-coupling ve high-cohesion olmazsa olmazdır. 
+  => Bu sayede bağlılık derecesi düşük olursa, sorumluluklar bileşen başına dağılmış olacağından yazılımın kontrolu bizim elimide daha kolay olacaktır. Bileşenler içerisindeki sorumluluklarında birbirine yakın olması yeniden 
+     kullanılabilirliği ortaya çıkaracaktır.
+
+
+SOLID PRENSIPLERI:
+
+- SOLID, her yazılımcının bilmesi gereken temel prensipler bütünüdür. Robert C. Martin tarafından ileri sürülen ve kısaltması Michael Feathers tarafından düşünülen bu prensiplerin amacı; kod tekrarına düşmeyerek, sürdürülebilir
+  anlaşılabilir, esnek ve yeniden kullanılabilir yazılımlar geliştirmektir.
+- SOLID prensipleri bir yazılım geliştricisinin OOP ile yazılım geliştirirken, geliştirdiği yazılımın esnek ve geliştirlmeye uygun olması için uyması gereken kurallar bütünüdür. Bu prensipler doğrultusunda geliştirdiğimiz. Uygulamalarımız
+  ne kadar büyük olursa olsun, karmaşıklık asla söz konusu olmaz. Spagetti kod dediğmiz karmaşık kod yerine clean cod yazmamızı yine bu prensipler sağlamaktadır.
+- Dünya standartlarında yazılım geliştirmemize olanak sağlayan bu prensipleri 5 ana başlıkta ele alabiliriz.
+  
+  => S - Single Responsibility Principle (SRP)
+  => O - Open/Closed Principle (OCP)
+  => L - Liskov's Substitution Principle (LSP)
+  => I - Interface Segregation Principle (ISP)
+  => D - Dependancy Inversion Principle (DIP)
+
+============================================================================================================================================================================================================================================
+
+S - Single Responsibility Principle: 
+- Bu prensipte amaç, geliştirilen projede bir güncelleme veya değişiklik yapılması istendiğinde kodların içinde kaybolmadan, yalnızca ilgili metoda giderek istenilen değişikliğin yapılmasının sağlanmasıdır. Biraz daha açacak olursak
+  bir fonksiyona birden fazla iş verip onu birçok işten sorumlu tutmak yerine, her bir iş için ayrı bir metot oluşturulmalı ve ilerleyen zamanlarda bir değişiklik yapılacağında da kolaylıkla ilgili metoda giderek gerekli değişiklikleri 
+  yapabilmeliyiz.
+- Yani her sınıfın veya metodun tek bir sorumluluğu olmalı.
+  Örneğin; bir robotu hem mutfak robotu hem bahçe robotu hem boya robotu yapmaktansa, her bir iş için ayrı bir robot yapmalıyız.
+  Daha kodsal bir örnek vermek gerekirse;
+  SendMail adında bir sınıf oluşturduğumuzu düşünelim. Bu sınıf içerisinde iki adet metod var; SendMailForX ve IsMailAdressValid.
+  
+  class SendMail
+  {
+	public bool SenMailForX(string input, string mailAdress)
+	{
+		// Check if mail legit
+		if (!IsMailAdressValid(mailAdress))
+		{
+			return false;
+		}
+		
+		// Do stuff...
+
+		return true;
+	}
+
+	public bool IsMailAdressValid(string mailAdress)
+	{
+		// Check the mail...
+
+		return true;
+  	}
+  }
+
+- Bu şekilde kod yazdığımızda SOLID'in S si olan SingleResponsiblity prensibine aykırı kod yazmış oluyoruz. Çünkü SendMail sınıfnın işi mail göndermek, mailin gerçek olup olmadığını kontrol etmek değil.
+- Bu yüzden IsMailAdressValid metodu bu sınıfın içerisinde olmamalıdır.
+
+  class MailAdressValidator
+  {
+	public bool IsMailAdressValid(string mailAdress)
+	{
+		// Check the mail..
+		return true;
+  	}
+  }
+
+  class SendMail
+  {
+	
+	private MailAdressValidator validator = new MailAdressValidator();
+
+	public bool SenMailForX(string input, string mailAdress)
+	{
+		// Check if mail legit
+		if (!validator.IsMailAdressValid(mailAdress))
+		{
+			return false;
+		}
+		
+		// Do stuff.
+		return true;
+	}
+  }
+
+- Kodu bu şekilde düzeltmek doğru olacaktır.
+
+============================================================================================================================================================================================================================================
+
+O - Open/Closed Principle:
+- Bu prensip, projede geliştirilen nesnelerin geliştirilmeye açık ama değişime kapalı olmaları gerektiğin ifade eder. Yani bir nesne davranışını değiştirmeden yeni özellikler kazanabiliyor olmalıdır. Bu prensip, sürdürülebilir ve tekrar 
+  kullanılabilir yapıda kod yazmanın temelini oluşturur.
+- Sınıflarımız veya metotlarımız oluştururken ileride olabilecek yeni istekler ve gelişmeleri de öngörerek tasarlamamız gerekir. Projemizde oluşabilecek yeni istek ve ihtiyaçlar sonucunda yapacağımız geliştirmeler, projemizdeki diğer
+  sistemleri etkilememeli ve herhangi bir değişikliğe sebep vermemelidir.
+  Örneğin;
+  
+  class File
+  {
+	public void SaveToFile(string fileType, string value)
+	{
+		if (fileType == "txt")
+		{
+			// ...
+		}
+
+		else if (fileType == "xml")
+		{
+			// ...
+		}
+	}
+  } 
+
+  Bu class yapısını incelediğimizde hangi dosya türüne kaydedilmek isteniyorsa her dosya için if bloğu yazılıyor.
+  Daha sonradan yeni bir dosya eklemek istediğimizde sürekli if blokları yazmak zorunda kalıcağız.
+
+  abstract class File
+  {
+	public abstract void SaveToFile(string value)
+  }
+
+  class TXTFile : File
+  {
+	public override void SaveToFile(string value)
+	{
+		// ...
+	}
+  }
+
+  class XMLFile : File
+  {
+	public override void SaveToFile(string value)
+	{
+		// ...
+	}
+  }
+
+  Daha sonradan yeni bir dosya türü eklemek istediğimizde sadece yeni bir class oluşturup File'dan türetmemeiz yeterli olucaktır.
+
+============================================================================================================================================================================================================================================
+
+L - Liskov's Substitution Principle:
+- Prensibe adını veren kadın Barbara Liskov tarafından, ki kendisi MIT'de profesör, 1988 yılında Data Abstraction and Hierarchy adlı kitabında ilk defa bu kendi ismini taşıyan prensibi ortaya koymuştur.
+- Tanım olarak: alt sınıflar miras aldığı üst sınıfın bütün özelliklerini kullanmalı, alt sınıflarda oluşurulan nesneler üst sınıfların nesneleriyle yer değiştirdiklerinde aynı davranışı göstermeli ve herhangi bir kullanılmayan
+  özellik olmamalı.
+
+????????
+
+============================================================================================================================================================================================================================================
+
+I - Interface Segregation Principle:
+- Arayüz ayrımı prensibinde, bir interface'e gerekenden fazla sorumluluk eklemek yerine, daha özelleştirilmiş birden fazla interface oluşturulmalıdır. Nesneler, ihtiyacı olmayan özellik veya metotlar içeren interface'leri miras almaya
+  zorlanmamalıdır. "Single Responsibility"ye benzer. Ancak burada gözden kaçırılmaması gereken şudur ki: Interface Segregation prensibi interface'ler ile ilgilenirken, Single responsibility prensibi class'lar ile ilgilenmektedir.
+- Interface'ler içinde sadece metotların imzaları bulunur. Bir interface bir class'a implemet edildiği zaman, interface'in barındırdığı metotları barındırmak veya oluşturmak zorundadır
+- İşte bu durumda prensip devreye girer ve derki "eğer class içerisinde gerçekten ihtiyaç duyulmayan ve kullanılamayan metotlar interface aracılığıyla implement edilmiş ise bu kodlar dumy kod olur, bu yüzden interface'ler ayrımlaı ve 
+  class'lar açısından işlevsel olmayanmetotlar barındırması engellenmelidir.
+
+============================================================================================================================================================================================================================================
+
+D - Dependency Inversion Principle:
+- Bu prensibe göre, alt sınıflarda yapılan değişiklikler üst sınıfları etkilememelidir yani sınıflar arası bağımlılıklar olabildiğince az olmalıdır ve özellikle üst veiye sınıflar, alt seviye sınıflara bağımlı olmamalıdır. 
+- Burada yüksek seviye sınıf ile düşük seviye sınıf arasında bir soyutlama katmanı oluşturarak her iki sınıfı da soyut kavramlar üzeridenn yönetmeliyiz.
+- Buradaki amaç üst seviedeki modullerin alt seviyelere bağımlı olmasından dolayı çıkabilecek sorunları oradan kaldrımaktır. Yani alt seviede yapılan herhangi bir değişiliğin üst seviyede kod değişikliğine veya onun bağlılıklarının
+  etkilenmesine engel olmaktır.
+- Daha kaba bir anlatım ile üst seviyedeki modül alt seviyedeki işin nasıl yürüdüğünü bilmemeli ve ilgilenmemelidir. Ben üst seviyedeki modul olarak diyorum ki; alt taraftan x verisinin nasıl geldiği ile ilgilenmem, bana gelen x 
+  verisi ile ilgili işlemimii yapar, gerekli yerlere gönderirim. Ama x verisi bir veri tabanından mı geldi, bir API 'den mi geldi yoksa bir txt dosyasından mı okunarak geldi burası beni ilgilendirmze. Zaten bu gibi isteklerinde beni 
+  etkilememesi gerekmektedir.
+
+============================================================================================================================================================================================================================================
+
+ASP.NET nedir:
+- ASP.NET micorsoftun geliştirmiş olduğu web uygulama geliştirme frameworkudur. 
+- Klasik ASP'nin üzerinde önemli geliştirmeler yapılarak oluşturulmuştur.
+- ASP.NET modern bir teknolojidir ve web sayfaları, web uygulamaları ve XML servisleri hazırlanmasına olanak sağlar.
+- ASP.NET code behind denilen tasarım öğeleri ile programlama öğelerini birbirinden ayrı sayfalarda bulunduran bir özelliği destekler.
+- Bu özellik sayesinde bir proje üzerinde tasarımcı ve programcı aynı anda çalışabilir.
+- ASP.NET teknolojisi oldukça hızlıdır, eski ASP'ye göre her seferinde sayfaların tekrar tekrar okunarak her istekte bir request olmasını engelleyerek, daha hızlı ve daha performanslı çalışmasını sağlar.
+- ASP.NET kullanıcıları için bir çok arayüze sahiptir. Email formları, veritabanı listeleyicileri gibi bir çok komponent bulunmaktadır.
+
+ASP.NET CORE nedir:
+- 2016 yılında tanıtıtlan ASP.NET CORE .NET teknolojileri ile yazılım geliştirme çalışmaları yapan geliştricilerin daha duyarlı, güvenilir ve genişletilebilir uygulamlar geliştirebilmelerini kolaylaştırmaktdaır.
+- ASP.NET CORE tüm ASP.NET altyapısının yeniden tasarlanılarak, WEB API ve MVC altyapıları ile birleştirilmesii sağlamıştır.
+- ASP.NET Core içerisinde bir çok kütüphane ve optimizasyon aracı bulundurmaktadır. Bu araçlar sayesinde daha srğdürebilir, yüksek performanlsı yazılımlar oluşturulabilmektedir.
+- Hızlı sürüm döngüleri, kolay güncellemeler, bellek optimizasyonları ve boşlık ayırma gibi özellikler altyapıyı mobil içinde çok uygun bşr hale getirmektedir.
+- Bir web uygulaması geliştirildiğinde uygulamaını tğm platformalarda sorunsuz bir şekilde çalışması gerekmektedir. Cross platform support olarak adlandırılan bu özellik ASP.NET CORE tarfındanda desteklenmektedir.
+- ASP.NET CORE MacOS, Linux ve Windows işletim sistemleri üzerinde sorunsuz çalışmaktadır.
+
+MVC Mimarisi:
+- ModelViewController kelimelerinin baş harflerinden kısaltılarak oluşturulan özellikle web uygulamarlı geliştirmek için oluşturulumuş bir tasarım modeli
+- Adından da anlaşılacağı gibi 3 ana bölümü vardır girdi süreç çıktı.
+- MVC ASP.NET ile özdeşleştirilsede ilk olarak 1979 yılında ortaya çıkmıştır.
+- Günümüzde MVC denilince ilk akla gelen Microsoft'un geliştridği ASP.NET MVC Framework olmasısın nedeni web projeleri için yapısının uygun olmasıdır.
+
+
+
+
+
+
+
