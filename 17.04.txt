@@ -201,6 +201,8 @@ D - Dependency Inversion Principle:
 ============================================================================================================================================================================================================================================
 
 ASP.NET nedir:
+- ASP.NET, HTML, CSS ve JS ile dinamik web sayfaları, web siteleri, uygulamalar ve hizmetler üretmek için web geliştirme için tasarlanmış açık kaynaklı bir sunucu tarafı web uygulama çerçevesidir.
+- Ayrıca Web API'Leri, mobile siteler oluşturabili, web soketleri gibi gerçek zamanlı teknolojileri kullanabilisiniz.
 - ASP.NET micorsoftun geliştirmiş olduğu web uygulama geliştirme frameworkudur. 
 - Klasik ASP'nin üzerinde önemli geliştirmeler yapılarak oluşturulmuştur.
 - ASP.NET modern bir teknolojidir ve web sayfaları, web uygulamaları ve XML servisleri hazırlanmasına olanak sağlar.
@@ -217,15 +219,125 @@ ASP.NET CORE nedir:
 - Bir web uygulaması geliştirildiğinde uygulamaını tğm platformalarda sorunsuz bir şekilde çalışması gerekmektedir. Cross platform support olarak adlandırılan bu özellik ASP.NET CORE tarfındanda desteklenmektedir.
 - ASP.NET CORE MacOS, Linux ve Windows işletim sistemleri üzerinde sorunsuz çalışmaktadır.
 
+Peki ASP.NET ile ASP.NET CORE arasındaki fark nedir?
+- ASP.NET CORE aslında ASP.NET'in yeniden dizayn edilererk bir çok konseptinin değiştirildiği yeni bir teknolojidir.
+- Üstelik cross platform çalışabilmek için geliştirilmektedir.
+- Diğer bir değişle uygulamalarınızı sadece IIS'te Windows bir makinede host etmek zorunda değilsiniz.
+
+
 MVC Mimarisi:
 - ModelViewController kelimelerinin baş harflerinden kısaltılarak oluşturulan özellikle web uygulamarlı geliştirmek için oluşturulumuş bir tasarım modeli
 - Adından da anlaşılacağı gibi 3 ana bölümü vardır girdi süreç çıktı.
 - MVC ASP.NET ile özdeşleştirilsede ilk olarak 1979 yılında ortaya çıkmıştır.
 - Günümüzde MVC denilince ilk akla gelen Microsoft'un geliştridği ASP.NET MVC Framework olmasısın nedeni web projeleri için yapısının uygun olmasıdır.
+- Microsoft tarafından geliştirilmemiştir!!!
+- Peki Model, View, Controller nedir?
+
+- Model: Uygulamalarda kullanılan verileri temsil eder ve verilerin işlenme mantığının saklandığı kısımdır. 
+         Adındanda anlaşılacağı üzere veri yönetimi burada yapılır.
+         Burayı salt veriyi temsil eden sınıf olarak görmemeliyiz; model katmanı veriye erişim sınıfları ve iş mantığını da barındırır.
+
+- View: Basitçe uygulamamızın kullanıcıların gördüğü kısmıdır, arayüzüdür.
+ 	  Uygulamanın arayüz yapılarını (layout, button, edittext vb) barındırır, bunun yanında kullanıcıdan gelen hareketleri (click , scroll vs) presenter'a iletir.
+ 	  Android'de view interface'lerini activity ve fragment'lar implement eder böylece android geliştirmede en sık karşılaşılan god object'den korunmuş olunur.
+
+- Controller: Model ve view arasında getir götür işlemlerini gerçekleştirir.
+  	 	  MVC yapısında ana mantık Model ve View yapısının ayrılmasıdır.
+   	 	  Bu iki yapı arasındaki haberleşmeyi sağlayan köprüye controller denir.
+		  Projedeki tüm işlemlerin (veritabanı işlemleri, hesaplamalar, veri aktarımı) gibi işlemlerin yapıldığı kontrol bölümüdür.
+   	 	  Controller ayrıca model ve view arasındaki veri akışınıda kontrol eder.
+
+- Presenter: MVP (Model View Presenter) kalıbının kalbinde yer alır, diğer modülleri koordine eder. 
+             Genelde model'den hizmet alıp view'ı günceller.
+
+- Bu modele göre, bir öğe başka bir yere bağlanmalı veya bağlantılı olması gerekir. UI mantığı, görünümü veya ön ucuyla ilgilenir. Giriş mantığı denetleyiciyle ilgilenir. Son olarak, iş mantığı bir çözüm modeliyle ilgilenir. Bu gevşek 
+  bağlı öğe, geliştiricilerin herhangi bir sürümü oluştururken karmaşık çözüme yardımcı olur. (burayı anlamadım)
+
+MVC Mimarisini kullanmanın yararları:
+- Herhangi bir kontrolördeki ilgili eylemlerin mantıksal kümelenmesi mvc aracılığıyla sağlanabilir.
+- Çeşitli geliştiriciler, aynı uygulama denetleyicisi, modeli ve görünümleri parçası gibi farklı parçalar üzerinde aynı anda çalışbilir.
+- MVC'de modeller çok sayıda görünüme sahip olabilir.
+
+Peki neden MVC mimarisi:
+- Asıl olaya gelirsek özetle, MVC sayesinde Model ve View yapısını ayrıştırmış oluyoruz.
+- Böylelikle yarın bir gün uygulamamızın görünümünü değiştirmek durumunda kaldığımızda "yalnızca" görünümle uğraşmamız gerekecek
+- İç içe geçmiş spagetti kodla uğraşmak durumunda kalmış olsaydık, sadece görünümünü değiştirmek isterken uygulamanın işleyişinide değiştirmek durumunda kalcaktık. (Hatta bunu yaparken yanlışlıkla işleyişide bozabiliriz)
+
+Önemli Noktalar:
+- Controller sadece aracı görevi görüyor. İş mantığı Model'de, görsel mantık View'da olmalı; Controller sadece haberleşmeyi sağlamalı. Controller'a, Model'in ve/veya View'ın sorumlulukları yüklenirse MVC kullanmanın hiç bir anlam
+  yok.
+- Hakkından bahsettiğimiz sebepten ötürü Fat Model, Skinny Controller yapısını kurgulamamız lazım. MVC kullanmamızın algoritmayı Controller'a sıçratırsak hiçbir kazancı kalmıyor
+- MVC sadece web tabanlı projelerde kullanılıyormuş gibi gelse de, Masaüstü / Mobil uygulama geliştirirken de MVC kullanılabilir. Zira MBC bir mimari biçimdir. 
+
+API:
+- Application Programming Interface
+- Web'de çalışabilen ve web uygulamaları, işletim sistemleri, veritabanları, donanımlar yahut yazılım kütüphaneleri ile iletişim kurabilen bir arayüzdür
+- Direkt olarak web uygulaması yaklaşımı diyemeyiz. Lakin genellikle web tabanlı uygulamalarda client ve server arasındaki iletişimi sağlayan bir sözleşme olarak kullanılmaktadır. Bu forma Web API ismi verilmektedir.
 
 
+ASP.NET CORE Proje Oluşturma ve Dosya Yapısı: .NET CORE 5 İÇİN GEÇERLİ!!!!!
+Program.cs:
+- ASP.NET uygulamaları esasında bir consol uygulamasıdır.
+- ASP.NET CORE kendi dahilinde sunucu barındırır. İşte o sunucuyu ayağa kaldırdığı nokta Program.cs dosyasıdır.
+- Program.cs içerisinde ayağa kaldırılıcak host'un kullanacağı konfigürasyonları nereden alacağını bildirmektedir.
+- Temel konfigürasyon sınfı startup'tır
+Startup.cs:
+- Web uygulamasında belirli konfigürasyonları yaptığımız dosya startup.cs dir.
+- Startup.cs içerisinde iki temel metot bulunur; ConfigureServices, Configure.
+- Bu uygulamada kullanılacak servislerin eklendiği yani konfigüre edildiği metot ConfigureServices'dir.
+- "Servis" nedir?: Belirli işlere odaklanmış ve o işlerin sorumluluğunu üstlenmiş kütüphaneler/sınıflar. Servis = modül/kütüphane.
+- Bu uygulamada kullanılacak middleware'lerimizi (ara katman/ara yazılım) çağırdığımız metot Configure'dir.
+Appsettings.json:
+- Appsettings uygulamada belirli static değeleri tuttuğumuz bir konfigürasyon dosyasıdır.
+- Yazılımlarda bazen uygulamanın her yerinde kullanmak isteyeceğimiz metinsel değerler olabilir. (Veri tabanı bağlantı string'i)
+- Bu değerler birden fazla yer tarafında tüketilebilir. 
+- Yazılımlarda kullanılması gereken static olan metinsel değerler kodun içerisine yerleştirilmez.
+- Her yere kodun içerisine yerleştirirsek, gün gelince değiştirmek istediğimizde gidip bütün yerleştirdiğimiz yerlerde değiştirmemiz gerekir.
+- Bu durum zaman tüketicek ve maliyetli olucaktır.
+- Böyle maliyetlerden kaçınabilmek için static olan metinsel değerleri appsettings.json dosyasında tutmaktayız.
+Appsettings.development.json:
+- Environment'lara göre appsettings tanımlanır.
+- Şuan geliştirme aşamasındaolduğu için development aşamasındadır.
+Properties:
+------
+launchSettings.json:
+- Environment profillerini yönettiğimiz bir penceredir.
+Dependencies:
+- Kullandığımız bütün kütüphaneler, framework'ler uygulamalarda bir bağımlılık olarak nitelendiriliyor.
 
+- Uygulama ayağa kaldırıldığında önce Program.cs çalışıcak, gerekli host build edilicek. Ardından Startup.cs'den gerekli konfigürasyonlar alınıcak ve uygulama hangi davranışa hangi modele hangi yaklaşıma benimsiyosa o yaklaşımda gerekli
+  şekilde çalışmaya başlıycaktır.
 
+MVC Gençay Yıldız Versiyon (Yukarıda yazdıklarımı farklı farklı sitelerden birleştirip yazmıştım, bu yazıcaklarım full gençay yıldıza ait.):
+- MVC, birbirinden bağımsız üç katmanı esas alan bir mimarisel desendir.
+- Özünde Observer, Decorator gibi design pattern'ları kullanan bir mimarisle desendir.
+- Microsoft bu desen üzeine oturtulmuş ASP.NET CORE 'u geliştirmiştir.
 
+Model:
+- İşlenecek olan veriiy temsil edne katmandır. Genellikle veritabanı işlemlerinin yapıldığı katmandır.
+- Entity Framework Core, Entity Models, Ado.NET, Repository, Veritabanı işlemleri
 
+View:
+- İstek neticesinde elde edilen verileri görselleştirecek, görsel çıktısının verecek katmandır.
+- HTML, CSS, JavaScript, Razor, Resim, Müzik, Video
 
+Controller:
+- Gelen request'leri karşılayacak olan ve request'in içeriğine göre gerekli model işlemlerini üstlenecek oan katmandır.
+- Algoritmaları, servisleri, veritabanını vs. çağırarak/çalıştırarak/sorgulayarak istenilen veriyi üretmekten ve ihtiyaç dahilinde üretilen bu veriyi View ile görselleştirmekten sourmludur.
+- İstek neticesinde elde edilen ve işlenen veriyi tekrardan client'a response olarak döndürür.
+
+ASP.NET CORE MVC PIPELANE:
+- Gelen request Kestrel sunucu tarafında karşılancak.
+- Middleware'ler çalışıcak
+- Routing katmanına gelicek ve gerekli route işlemleri gerekli endpointler ayıklanıcak.
+- Controller Initialization, controller isteği karşılıycak ve yapılan istek karşılığında gerekli işlemleri yapıcak.
+- Action Method Execution, controller içerisinde yapılan isteğe gerçekten cevap verecek methodlar, gerekse model'a bağlancak gerekse view'a göndercek.
+- Üretilen veri ya direk client'a gönderilecek ya da view'e gönderilecek ve render edilicek ve bu client'a gönderilcek.
+
+ASP.NET CORE MVC proje altyapısı oluşturma, Boş bir ASP.NET CORE uygulamasını MVC mimarisine bağlama:
+- Boş bir ASP.NET CORE porjesi oluşturduktan sonra Startup.cs içerisindeki Configure methoduna services.AddControllerWithViews(); deyip MVC mimarisinde çalışıcağımızı belirtiriz.
+  .NET CORE 6.0 için => Program.cs içerisnde builder.Services.AddControllerWithViews();
+- ASP.NET CORE uygulamasında MVC mimarisini kullanabilmek için uygulamada Controller ve Views yapılanmalarının eklenmesi gerekmektedir.
+- Bunun için öncelikle bu servis uygulamaya eklenir. Böylece uygulama MVC davranışı sergiliycektir.
+- Gelen isteğin rotası app.UseRouting() bu middleware sayesinde belirlenir.
+- Endpoint: yapılan isteğin varış noktası yani url. İstek Adresi. Bu uygulamaya gelen isteklerin hangi rotalar/Şablonlar eşliğinde gelebileceğini burada bildireceğiz.
