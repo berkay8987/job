@@ -1,0 +1,209 @@
+HSTS:
+- HTTP Strict Transport Security.
+- Web sitelerini protokol indirgeme ve oturum çalma saldırılarına karşı korumaya yardımcı olan bir web güvenlik politikası mekanizmasıdır. 
+- Web sunucuları, kendisine gönderilen isteklerin yalnızca HTTPS üzerinden olması gerektiğini web tarayıcılarına bu mekanizma ile belirtir.
+
+Kestral: ?
+- .NET Core ile birlikte gelen Kestrel diğer web sunuculardan bağımsız kendi web sunucu özelliklerini barındıran bir yapıdır. 
+- Bu bağımsızlığı sayesinde cross-platform uygulamalar geliştirme altyapısı sunar. 
+- Ek olarak da tam teşekküllü bir web serverdan soyutladığı özellikler ile yeniden tasarlanarak, performans artışı sağlar.
+
+Dependancy Injection:
+- ASP.NET CORE built-in olarak DI implement eder.
+- DI kullanmayan bir web sitesi varsayalım, bu websitesi 3 sayfadan oluşsun ve her sayfada ortak kullancağımız özellikler olduğunu varsayalım (her sayfada email gönderebilmek, her sayfada db'ye erişebilmek..)
+  Mesela bu üç sayfada db'ye erişmek istediğimiz zaman her sayfada ayrı ayrı bu db için objeler oluşturucaz, aynı şekilde email göndermek için her sayafada email objes oluşturucaz.
+  Her üç sayfada da bu objelerin düzgün bir şekilde kulnaılması ve dispose edilmesini kontrol etmemiz gerekcek
+  Ve daha sonradan bu objelerin kullnış şekillerini değiştirdiğimizde bu 3 sayfada da değiştirmemiz gerekebilir (3 değil 30 sayfa olsaydı..)
+- DI kullanan bir websitesinde ise, DI container adında özel bir şeyimiz olcak.
+  Bu DI Container içeriisnde IEmail, Email; IDb, Db aynı zamanda bunların (IEmail, IDb) implementasyonları bulunucak.
+  Daha sonradan bu üç sayfa herhangi bir objeyi kullnamka istediği zaman DI Contaniner'a sorucak ve ordan objenin oluşturulmuş halini alıcak.
+  Bu şekilde sayfada objeyi oluşturmakla, dispose etmekle uğraşmıycaz.
+  Bu şekilde sayfalar daha temiz olucak ve bütün implementasyonlar DI Container tarafından halledilicek
+  Daha sonradan bu objeleri değiştirmek istediğmiz zaman sadece DI Container içeriisnde değiştirmemezi gerekicek.
+
+Project File:
+- Uygulamamızda kullandığımız .net versiyonu, kullandığımız paketlerin olduğu dosyadır.
+
+Appsettings.json:
+- Appsettings uygulamada belirli static değeleri tuttuğumuz bir konfigürasyon dosyasıdır.
+- Yazılımlarda bazen uygulamanın her yerinde kullanmak isteyeceğimiz metinsel değerler olabilir. (Veri tabanı bağlantı string'i)
+- Bu değerler birden fazla yer tarafında tüketilebilir. 
+- Yazılımlarda kullanılması gereken static olan metinsel değerler kodun içerisine yerleştirilmez.
+- Her yere kodun içerisine yerleştirirsek, gün gelince değiştirmek istediğimizde gidip bütün yerleştirdiğimiz yerlerde değiştirmemiz gerekir.
+- Bu durum zaman tüketicek ve maliyetli olucaktır.
+- Böyle maliyetlerden kaçınabilmek için static olan metinsel değerleri appsettings.json dosyasında tutmaktayız.
+
+Program.cs:
+- var builder = WebApplication.CreateBuilder(args);
+  Bu satır ile webapplicationbuilder objemiz builder adı altında oluşucak ve konfigüre olucak.
+- builder.Services.AddControllersWithViews();
+  bu satır ile uygulamada MVC mimarisini kullancağımızı belli ediyoruz.
+- Yukarıdaki satırdan sonra var app = builder.run(); satırına gelene kadar araya yazacağımız her şey DI Container'a kayıt etmiş oluruz (örneğin veritabanımızı, email servislerini..)
+- Pipeline: 
+  Uygulamamızın gelen isteklere nasıl cevap vermesini ayarladığımız yerdir.
+  Pipeline içerisinde middleware'ler bulunur ve bu middleware'ler request üzerisinde değişikilkler yaparak diğer middleware'e gönderir.
+- if (!app.Environment.IsDevelopment())
+  {
+	app.UseExceptionHandler("/Home/Error");
+	app.UseHsts();
+  }
+
+  Yukarıdaki if bloğu uygulamamızın development sürecinde olup olmadığını sorguluyor, eğer developemtn sürecinde değilsek web sitesinde karşılaşılan herhangi bir hata için /home/error yolunu kullanmasını söyluyor.
+  Ve sadece https ile gelen requestleri kullanmamızı söylüyor http ile web sitesini kullanamayacağımızı söylüyor.
+
+- app.UseHttpsRedirection();
+- app.UseStaticFiles();
+- app.UseRouting();
+- app.UseAuthorization();
+- app.MapControllerRoute(
+	name: "default",
+ 	pattern: "{controller=Home}/{action=Index}/{id?}");
+
+  Yukarıdaki satırların her biri ayrı bir middleware'dir. 
+  MapControllerRoute ise url'i belli kısımlara ayırır.
+  https://....../Home/Index default url'dir yani hiçbir şey girilmemiş olsa bile (örneğin https://....../) bunu /Home/Index olarak algılar
+  url'den sonra ilk gelen kısım controller'i ifade eder. (https://...../Controller/Action)
+  ikinci kısım ise action'dır. 
+  üçüncü kısım id'yi belirtir ancak id girilmesi zorunlu değildir. Null olarak kalabilir.
+
+MVC
+- Model: Datanın şeklini ifade eder. Örneğin uygulamamızın içerinde product adında ürün kategorisini, ürün detayının içeren bir table olsun; işte o product bir model'dır.
+- View: Kullanıcın gördüğüdür. Bir websitesinde görülen herşey view'ı kapsar.
+- Controller: Model ile View arasında köprüdür. Kullanıcıdan bir istek geldiğinde controller önce model'a gider gerekli işlemleri yapar, sonra view'a gider ve kullanıcıya response olarak döner.
+
+View dosyası:
+- View dosyası içerisinde kullanıcın göreceği html dosyalarını barındırır.
+- View dosyası içerisinde Shared ve Home klasörleri bulunur. Home, HomeController'ın kullandığı dosyadır. Shared dosyası ise asıl masterpage'i bulundurur.
+- _Layout.cshtml asıl master page'dir, diğer html dosyaları bu dosya üzerinde değişiklik yapar.
+- _ValidationScriptPartial.cshtml ise partial validation scriptlerini eklediğimiz yerdir.
+- _ViewImports.cshtml ; sayfalarda erişmek istediğimz namespaceleri buraya eklersek onlara büütn safalardan erişebilriiz. Aynı zamanda Microsoft tarafında üretilen TagHelpers burada bulunur
+  asp prefix'iyle başlar tag helperlar. (asp-controller, asp-for, asp-action)
+- _ViewStart default master page'i ayarlamamıız sağlar 
+
+Tag Helpers:
+- ASP.NET CORE ile gelirler.
+- TagHelper'lar server-sidedır
+- HTML helperlardan daha kolay kullanıma sahiplerdir.
+
+IActionResult:
+- IActionResult aslında içerisinde birden fazla return type'ın olduğu bir interfacedir
+- Bu sayede kullanım kolaylığı sağlar
+  Örneğin;
+   
+  public ViewResult Index()
+  {
+	if (...)
+      {
+		return RedirectToAction("Index");
+	}
+	return View();
+  }
+
+  Yukarıdaki kod örneği hata verir çünkü geri dönüş tiği ViewResulttur ancak if bloğu içerisinde başka bir action'a redirect ediyoruz.
+  Bu tarz durumlarda kaçınmak için IActionResult kullanırız.
+
+  public IActionResult Index()
+  {
+	if (...)
+      {
+		return RedirectToAction("Index");
+	}
+	return View();
+  }
+
+Hot Reload:
+- Hot reload sayesinde view içerisinde bir değişiklik yaptığımızda, uygulama kendiliğinden sayfaya refresh atar.
+
+Data Annotations:
+- Yazdığımız kod satırına farklı anlamlar eklememiz sağlar.
+  Örneğin;
+  public int Id { get; set; }
+  Id'nin primary key olmasını istiyorsak;
+  [Key]
+  public int Id { get; set; }
+
+  Eğer bir field'ın null olamayacağını belirtmek istiyorsak;
+  [Required]
+  public string Name { get; set; }
+
+ConnectionString Eklemek:
+- appsettings.json içerine ekleriz
+  "ConnectionStrings": {
+	"DefaultConnection": "Server=.;Database=something;TrustServerCertificate=True;User ID=sa;Password=Password;"
+  }
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
