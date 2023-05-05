@@ -10,7 +10,7 @@ namespace MusteriSiparisUygulamasi.Data
 {
     public class ApplicationContext : DbContext
     {
-        public string connectionString = "Server=NB320882;Database=MSU;TrustServerCertificate=True;User Id=sa;Password=5xgkW8RUZr;";
+        public string connectionString = "ASDADASDA";
 
         public DbSet<Customer> Customers { get; set; } = null!;
 
