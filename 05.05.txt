@@ -1,0 +1,66 @@
+ASP.NET Core Web API
+- ASP.NET CORE Web API, faklı istemciler için veri ve hizmetler sağlamak için kullanılabilen güçlü bir web API çerçevesidir.
+- Framework; hafif, hızlı ve modüler olarak tasarlarnmıştır ve açık kaynaklıdır.
+- Bu çerçeve sayesinde geliştiriciler, RESTful prensiplerine uygun API'ler oluşturabilirler.
+- Framework özellikle web uygulamaları, mobil uygulamalar ve diğer hizmetler tarafından kullanılabilecek API'lerin kolayca oluşturulabilmesi 
+  için HTTP ve RESTful hizmetler desteği sunar
+- Framework; önbellekleme, sıkıştırma ve yanıt önbellekleme gibi özeliklerle performansı arttırır.
+- Güvenlik ve kimlik doğrulama konusunda da oldukça başarılıdır.
+- Framework; OAuth, OpenID Connect ve JWT gibi kimlik doğrulama mekanizmalarına destek verir ve HTTPS ve SSL/TLS desteği sağlar. 
+- ASP.NET Core Web API, çeşitli veri biçimlerini destekleyen bir yapıya sahiptir.
+- JSON ve XML serielleştirme özellikleri sayesinde farklı veri biçimlerinde veri üretebilir ve tüketebilir.
+- Framework'un modüler bir yapısı olduğundan, kolayca üçüncü taraf kütüphaneler ve araçlar kullanarak özellikleri ve işlevleri artırılabilir.
+- Son olarak, ASP.NET Core Web API kullanımı kolay ve öğrenmesi kolaydır. Framework hızlı bir şekilde yüksek kaliteli API'ler oluşturmak 
+  için birçok özellik ve araç içerir.
+- Ayrıca, ASP.NET Core Web API için dokümantasyon ve topluluk desteği oldukça iyidir, böylece herhangi bir sorunla karşılaşmanız durumunda 
+  kolayca yanıtlar bulabilirsiniz.
+
+OAuth:
+- OAuth, bir kullanıcının bir web sitesi veya uygulamadaki bilgilerini başka bir web sitesi veya uygulamanın kullanmasına izin vere bir protokoldür
+- Örneğin bir kullanıcının facebook hesabının kullanarak başka bir websitesine giriş yapabilmesini sağlar
+
+JWT (JSON Web Token):
+- JWT, Web uygulamaları arasında kimlik bilgilerini taşımak için kullanılan bir standarttır.
+- JWT, bir kullanıcının kimlik bilgilerini içeren bir token oluşturur ve bu token, kullanıcının herhangi bir web uygulamasında kimlik doğrulama 
+  yapmadan işlem yapmasını sağlar.
+
+OpenID Connect:
+- OpenID Connect, OAuth 2.0 tabanlı bir kimlik doğrulama protokolüdür ve JWT'leri kullanır.
+- OpenID Connect, bir kullanıcının kimlik bilgilerini doğruluğunu kontrol etmek için kulanılan bir protokoldür.
+- Bir kullanıcının kimlik bilgilerini kontrol eder ve bir JWT üretir.
+- Bu JWT, kullanıcının kimliğini doğrulama ve yetkilendirme işlemleri için kullanılır.
+
+REST ve SOAP
+- REST ve SOAP, web hizmetleri geliştirmede kullanılan iki popüler mimaridir. REST, Representational State Transfer'in kısaltmasıdır, 
+  SOAP ise Simple Object Access Protocol'ün kısaltmasıdır.
+- REST, hafif, ölçeklenebilir ve bakımı kolay olan web hizmetleri oluşturmak için kullanılan bir mimaridir. 
+- HTTP prensiplerine dayanır ve CRUD işlemlerini gerçekleştirmek için standart HTTP yöntemlerini (GET, POST, PUT, DELETE vb..) kullanır. 
+- Rest hizmetleri, sunucunun istekler arasında herhangi bir istemci bağlamı saklamadığı anlamsızdır.
+- Öte yandan SOAP farklı sistemler arasında yapılandırılmış bilgi alışverişi yapmak için kullanılan bir protokoldür. 
+- Mesajları kodlamak için XML kullanır ve bunları ağ üzerinden taşımak için HTTP veya HTTPS kullanır. SOAP hizmetleri genellikle REST 
+  hizmetlerinden daha karmaşıktır çünkü mesajları iletmek ve işlemek için daha fazla başlangıç gerektirirler.
+- REST'in SOAP'a göre en büyük avantajlarından biri basitliğidir. 
+- REST hizmetleri kolayca oluşturulabilir ve bakımı kolaydır ve tipik olarak SOAP hizmetlerinden daha hızlı ve ölçeklenebilirdir.
+
+API, STATELESS API, STATEFULL API
+- API'ler, uygulama programlama arayüzleri, yazılım uygulamalarının birbirleriyle etkileşim kurmasını sağlar. 
+- Bu, web uygulamaları, mobil uygulamalar ve diğer birçok yazılım uygulaması için önemlidir. 
+- API'ler, yazılım uygulamaları arasında veri paylaşımını kolaylaştırır ve farklı yazılım uygulamalarının birbirleriyle uyumlu 
+  çalışmasına yardımcı olur.
+- API'ler, iki tür olabilir: stateless ve stateful. 
+- Stateless API'ler ve stateful API'ler arasındaki fark, API'nin durumunu yönetme şeklidir. 
+- Stateless API'ler, herhangi bir durum bilgisi tutmazken, stateful API'ler, bir durum tutarlar.
+- Stateless API'ler, her isteği ayrı ayrı işler. İstek gönderen uygulama, API'ye bir istek gönderir ve API, bu isteğe yanıt verir. 
+  Bu istek, önceki istekler veya sonraki isteklerle ilgili bir bağlantı olmadan işlenir. 
+  Bu tür API'lerin örnekleri, RESTful API'ler ve GraphQL API'lerdir.
+- Stateful API'ler, her istekte bir durum bilgisi taşırlar. İstek gönderen uygulama, API'ye bir istek gönderir ve API, 
+  bu isteği işlerken önceki isteklerden gelen durum bilgilerini de kullanır. 
+  Bu tür API'ler, uygulama durumunun takibi veya oturum yönetimi için kullanılabilir. 
+  Örnek olarak, bir kullanıcının oturum açtığı bir web sitesi düşünebilirsiniz. 
+  Kullanıcı oturum açtıktan sonra, site onun oturum durumunu stateful API aracılığıyla takip eder ve kullanıcının sayfalar 
+  arasında gezinmesi sırasında oturum bilgilerini taşır.
+- Stateless API'ler, stateful API'lerden daha öngörülebilir ve ölçeklenebilir olabilirler, çünkü her istek, bağlantı olmadan işlenir. 
+- Ancak stateful API'ler, bazı durumlarda daha kullanışlıdır, çünkü uygulama durumunu takip etmek veya oturum yönetimi yapmak için gereklidir.
+- Sonuç olarak, API'lerin stateless veya stateful olması, uygulama programlama arayüzü tasarımına bağlıdır. 
+- Stateful API'lerin, uygulama durumunu takip etmek veya oturum yönetimi yapmak gibi durumlarda kullanışlı olduğu düşünülmektedir. 
+- Ancak, öngörülebilirliği ve ölçeklenebilirliği nedeniyle, birçok uygulama stateless API'leri tercih eder.
