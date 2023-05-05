@@ -14,10 +14,10 @@ namespace MusteriSiparisUygulamasi.Scripts
             Console.WriteLine();
 
             Console.WriteLine("\t///// CUSTOMERS /////");
-            Console.WriteLine("CustomerId,Name,Phone");
+            Console.WriteLine("CustomerId,Name,Phone,Balance");
             foreach ( var customer in customers ) 
             {
-                Console.WriteLine($"{customer.CustomerId},{customer.Name},{customer.Phone}");
+                Console.WriteLine($"{customer.CustomerId},{customer.Name},{customer.Phone},{customer.Balance}");
             }
 
             Console.WriteLine();

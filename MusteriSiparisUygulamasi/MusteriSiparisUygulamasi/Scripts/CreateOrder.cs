@@ -9,14 +9,28 @@ namespace MusteriSiparisUygulamasi.Scripts
         {
             using ApplicationContext context = new ApplicationContext();
 
-            Order ord = new Order()
-            {
-                CustomerId = custId,
-                ProductId = prodId
-            };
+            Customer customer = context.Customers.Where(x => x.CustomerId == custId).FirstOrDefault();
+            Product product = context.Products.Where(x => x.Id == prodId).FirstOrDefault();
 
-            context.Orders.Add(ord);
-            context.SaveChanges();
+            if (product.Price > customer.Balance)
+            {
+                Console.WriteLine("Not enough money!");
+            }
+            else 
+            {
+                Order ord = new Order()
+                {
+                    CustomerId = custId,
+                    ProductId = prodId
+                };
+
+                customer.Balance -= product.Price;
+
+                Console.WriteLine($"Bought {product.Name} for {product.Price}, remaining balance is {customer.Balance} for {customer.Name}.");
+
+                context.Orders.Add(ord);
+                context.SaveChanges();
+            } 
         }
     }
 }

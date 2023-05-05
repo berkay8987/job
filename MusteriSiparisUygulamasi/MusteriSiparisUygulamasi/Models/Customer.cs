@@ -14,6 +14,8 @@ namespace MusteriSiparisUygulamasi.Models
 
         public string? Phone { get; set; }
 
+        public int Balance { get; set; }
+
         public ICollection<Order> Orders { get; set; } = null!;
     }
 }

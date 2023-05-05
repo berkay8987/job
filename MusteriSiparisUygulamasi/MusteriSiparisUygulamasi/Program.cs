@@ -3,9 +3,9 @@ using MusteriSiparisUygulamasi.Scripts;
 
 
 int promptId = 0;
-while (promptId != 7)
+while (promptId != 8)
 {
-    string prompt = "\nActions:\n1-Create\n2-Update\n3-Delete\n4-Read\n5-CreateOrder\n6-Comment\n7-Exit";
+    string prompt = "\nActions:\n1-Create\n2-Update\n3-Delete\n4-Read\n5-CreateOrder\n6-Comment\n7-Balance\n8-Exit";
     Console.WriteLine(prompt);
 
     Console.Write("Select an Action> ");
@@ -217,6 +217,33 @@ while (promptId != 7)
             break;
 
         case 7:
+            HandleCustomerBalance hcb = new HandleCustomerBalance();
+            Console.Write("Add(1) or Remove Balance(2)?> ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+
+            if (choice == 1)
+            {
+                Console.Write("Which customer (Enter Id)> ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                Console.Write("How many to add> ");
+                int balanceToAdd = Convert.ToInt32(Console.ReadLine());
+                hcb.AddBalanceToCustomer(id, balanceToAdd);
+            }
+            else if (choice == 2)
+            {
+                Console.Write("Which customer (Enter Id)> ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                Console.Write("How many to remove> ");
+                int balanceToRemove = Convert.ToInt32(Console.ReadLine());
+                hcb.RemoveBalanceFromCustomer(id, balanceToRemove);
+            }
+            else
+            {
+                Console.WriteLine("Wrong Input");
+            }
+            break;
+
+        case 8:
             Console.WriteLine("Exiting...");
             break;
 
