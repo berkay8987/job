@@ -1,0 +1,37 @@
+Postman
+- Postman, HTTP API'leriyle etkileşim kurmak içindir. 
+- Postman, kullanıcıların test senaryolarını yazma, dinamik parametreler içerebilen istekler oluşturma, istekler arasında veri aktarma ve daha pek 
+  çok özellik gibi göze çarpan özelliklerle test komut dosyalarını otomatikleştirmelerine olanak tanır.
+
+Postman Avantajlari
+- 1. Kullanım kolaylığı: Test cihazları, poastman tarafından verilen örnek şablonları hızlı bir şekilde doldurarak hızlı bir şekilde test takımları oluşturabilir.
+- 2. Erişilebilirlik: Kullanıcılar, postman uygulamasına giriş yaparak veya tarayıcı uzantısını kullanarak dosyalarına istedikleri zaman istedikleri 
+                      yerden erişebilirler.
+- 3. Otomasyon testi: Testler, collection runner veya Newman kullanılarak birden çok kez çalıştırılabilir.
+- 4. Environments: Tekrarı azaltmak için birden çok environment çalıştırmak için aynı koleksiyonu kullanabilir.
+- 5. Debugging: Postman konsolu, hata ayıklamayı kolaylaştırmak için alınan verilerin belirlenmesine yardımcı olur.
+- 6. Sürekli entegrasyon.
+- 7. İşbirliği: Koleksiyonlara ve ortamlara, bunları içe ve dışa aktararak veya bunlara erişmek için doğrudan bir bağlantı paylaşarak her zaman 
+                her yerden erişilebilir.
+- 8. Tüm olası HTTP yöntemlerini destekler, ilerlemeyi kaydeder, API'leri koda dönüştürür.
+- 9. İstek izleme yetenekleri: Postman, HTTP istekleri için çeşitli durum kodlarını destekler (başarılı istekler, hatalı istek, boş istek, yetkisiz erişim vb.).
+
+Postman Dezavantajlari
+- 1. Sınırlı test alanı: Postman RESTful API testleri için iyi olsa da, SOAP veya diğer API testleri için tasarlanmamıştır.
+- 2. Komut dosyası kullanılabilirliği düşüktür.
+- 3. Sınırlı otomasyon yetenekleri ve manuel API testi için şiddetle tavsiye edilir.
+
+coka cok api
+gevsek baglilik siki baglilik
+di<-->inversion of control
+di cesitleri
+lifecycles
+swagger
+
+
+model ABCCreate id
+model put id
+
+model ABC
+
+
