@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Singleton</th>
+            <th>@ViewBag.SingletonService1</th>
+            <th>@ViewBag.SingletonService2</th>
+        </tr>
+
+        <tr>
+            <th>Transient</th>
+            <th>@ViewBag.TransientService1</th>
+            <th>@ViewBag.TransientService2</th>
+        </tr>
+
+        <tr>
+            <th>Scoped</th>
+            <th>@ViewBag.ScopedService1</th>
+            <th>@ViewBag.ScopedService2</th>
+        </tr>
+    </thead>
+</table>
