@@ -1,0 +1,15 @@
+C:\Users\STJ80354\source\repos\BORED\examp2\bin\Debug\net6.0\examp2.exe
+C:\Users\STJ80354\source\repos\BORED\examp2\bin\Debug\net6.0\examp2.deps.json
+C:\Users\STJ80354\source\repos\BORED\examp2\bin\Debug\net6.0\examp2.runtimeconfig.json
+C:\Users\STJ80354\source\repos\BORED\examp2\bin\Debug\net6.0\examp2.dll
+C:\Users\STJ80354\source\repos\BORED\examp2\bin\Debug\net6.0\examp2.pdb
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.dll
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\refint\examp2.dll
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.pdb
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\examp2.genruntimeconfig.cache
+C:\Users\STJ80354\source\repos\BORED\examp2\obj\Debug\net6.0\ref\examp2.dll
