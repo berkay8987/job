@@ -10,7 +10,7 @@ namespace LoadDataToDbFromAPI.Data
 {
     public class DataContext : DbContext
     {
-        string connectionString = "Server=NB320882;Database=WeatherInfoDatabase;TrustServerCertificate=True;User Id=sa;Password=5xgkW8RUZr;";
+        string connectionString = "Server=NB320882;Database=WeatherInfoDatabase;TrustServerCertificate=True;User Id=sa;Password=dontlookhere;";
 
         public DbSet<WeatherInfo> WeatherInfos { get; set; }
 
