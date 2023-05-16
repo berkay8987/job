@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoadDataToDbFromAPI", "LoadDataToDbFromAPI\LoadDataToDbFromAPI.csproj", "{BEEF13F0-D47D-40F0-A1F8-D2C0AE3714D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEEF13F0-D47D-40F0-A1F8-D2C0AE3714D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEEF13F0-D47D-40F0-A1F8-D2C0AE3714D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEEF13F0-D47D-40F0-A1F8-D2C0AE3714D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEEF13F0-D47D-40F0-A1F8-D2C0AE3714D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E280156B-2833-42F5-AA26-485C9F1DE375}
+	EndGlobalSection
+EndGlobal
