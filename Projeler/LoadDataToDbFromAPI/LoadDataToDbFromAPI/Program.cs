@@ -4,7 +4,7 @@ using System.Text.Json;
 using LoadDataToDbFromAPI.Data;
 using LoadDataToDbFromAPI.Models;
 
-const string API_KEY = "ef5f44f0f7fd4e83bb3190630231505";
+const string API_KEY = "lolllzzzz";
 
 MockDataClass mockDataClass = new MockDataClass();
 string[] cityNames = mockDataClass.mockData;
