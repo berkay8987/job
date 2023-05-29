@@ -1,0 +1,12 @@
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.deps.json
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.dll
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.pdb
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.dll
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\refint\P1_HangfireProject.Core.dll
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.pdb
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\ref\P1_HangfireProject.Core.dll
