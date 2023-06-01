@@ -3,52 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using P1_HangfireProject.Business;
 using P1_HangfireProject.Business.Abstract;
-using P1_HangfireProject.Core.Contexts.Data;
+using P1_HangfireProject.DataAccess.Abstract;
+using P1_HangfireProject.Hangfires.Abstract;
 
 namespace P1_HangfireProject.Hangfires
 {
     public class HandleHangfire
     {
-        ICustomerService _customerService;
-        ProjectDbContext _context;
+        private readonly ICustomerService _customerService;
+        private readonly ICustomerServiceDal _customerServiceDal;
+        private readonly IHangfireInfo _hangfireInfo;
 
-        public HandleHangfire(ICustomerService customerService, ProjectDbContext context)
+        public HandleHangfire(ICustomerService customerService, ICustomerServiceDal customerServiceDal, IHangfireInfo hangfireInfo)
         {
             _customerService = customerService;
-            _context = context; 
+            _customerServiceDal = customerServiceDal;
+            _hangfireInfo = hangfireInfo;
         }
 
-        public void MyHangfireFunction()
+        public void MyHangfireFunction()        
         {
-            Console.WriteLine("********************************");
-            Console.WriteLine("Hangfire Started");
-            Console.WriteLine("********************************");
+            _hangfireInfo.HangfireStartText();
 
+            // Get Customers With Balanace!=1000.00M
             var data = _customerService.GetCustomersWithNonStandardBalance();
 
-            if (data == null) 
+            /* 
+             * Check if data null, if null write 'No member(s) were effected.'
+             * Then exit hangfire.
+             */
+            if (data == null)
             {
-                Console.WriteLine("********************************");
-                Console.WriteLine("\nNo member(s) were effected.\n");
-                Console.WriteLine("********************************");
-                Console.WriteLine("Hangfire Ended");
-                Console.WriteLine("********************************");
+                _hangfireInfo.HangfireNoChangeText();
+                _hangfireInfo.HangfireEndText();
                 return;
             }
 
-            foreach (var item in data)
-            {
-                item.Balance = 1000.00M;
-                Console.WriteLine($"Changed balance to 1000.00M for {item.CustomerId}:{item.FirstName} {item.LastName} ");
-                _context.SaveChanges();
-            }
+            // Update balances to 1000.00M
+            _customerServiceDal.UpdateCustomerBalance(data);
 
-            Console.WriteLine("********************************");
-            Console.WriteLine("Hangfire Ended");
-            Console.WriteLine("********************************");
-            return;
+            _hangfireInfo.HangfireEndText();
         }
     }
 }

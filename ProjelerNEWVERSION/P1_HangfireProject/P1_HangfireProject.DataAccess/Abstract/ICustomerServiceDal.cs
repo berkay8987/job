@@ -10,5 +10,7 @@ namespace P1_HangfireProject.DataAccess.Abstract
     public interface ICustomerServiceDal
     {
         List<Customer> GetCustomersWithNonStandardBalanceDal();
+
+        void UpdateCustomerBalance(List<Customer> customers);
     }
 }

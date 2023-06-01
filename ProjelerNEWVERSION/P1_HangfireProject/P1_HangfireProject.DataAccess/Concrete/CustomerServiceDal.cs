@@ -25,5 +25,15 @@ namespace P1_HangfireProject.DataAccess.Concrete
                 .Where(x => x.IsActive == 1 && x.IsDeleted == 0 && x.Balance != 1000.00M)
                 .ToList();
         }
+
+        public void UpdateCustomerBalance(List<Customer> customers)
+        {
+            foreach (var item in customers)
+            {
+                item.Balance = 1000.00M;
+                Console.WriteLine($"Changed balance to 1000.00M for {item.CustomerId}:{item.FirstName} {item.LastName} ");
+                _context.SaveChanges();
+            }
+        }
     }
 }

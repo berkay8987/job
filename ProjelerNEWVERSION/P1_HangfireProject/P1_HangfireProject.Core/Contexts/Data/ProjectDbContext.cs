@@ -26,6 +26,19 @@ namespace P1_HangfireProject.Core.Contexts.Data
                 .HasOne<Customer>(o => o.Customer)
                 .WithMany(c => c.Orders)
                 .HasForeignKey(o => o.CustomerId);
+
+            modelBuilder.Entity<Customer>().HasData(
+                new Customer 
+                { 
+                    CustomerId = 11,
+                    FirstName = "Berkay",
+                    LastName  = "Ates",
+                    Email = "rastgele@rastgele.com",
+                    Balance = 2000.00M,
+                    IsActive = 1,
+                    IsDeleted = 0
+                }
+            );
         }
     }
 }

@@ -4,6 +4,8 @@ using P1_HangfireProject.DataAccess.Abstract;
 using P1_HangfireProject.DataAccess.Concrete;
 using P1_HangfireProject.Business.Abstract;
 using P1_HangfireProject.Business.Concrete;
+using P1_HangfireProject.Hangfires.Abstract;
+using P1_HangfireProject.Hangfires.Concrete;
 using P1_HangfireProject.Hangfires;
 using Hangfire;
 
@@ -22,6 +24,7 @@ builder.Services.AddHangfireServer();
 
 builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IHangfireInfo, HangfireInfo>();
 
 var app = builder.Build();
 
