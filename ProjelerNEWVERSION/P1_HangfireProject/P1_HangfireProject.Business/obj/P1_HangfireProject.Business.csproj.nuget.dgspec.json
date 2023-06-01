@@ -28,6 +28,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Core\\P1_HangfireProject.Core.csproj": {
+                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Core\\P1_HangfireProject.Core.csproj"
+              },
               "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj"
               }
@@ -98,6 +101,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -158,9 +183,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[2.2.0, )"
             }
           },
           "imports": [

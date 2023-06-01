@@ -16,6 +16,10 @@ namespace P1_HangfireProject.Core.Entities.Models
 
         public int ProductId { get; set; }
 
+        public int IsActive { get; set; }
+
+        public int IsDeleted { get; set; }
+
         public Customer Customer { get; set; } = null!;
     }
 }

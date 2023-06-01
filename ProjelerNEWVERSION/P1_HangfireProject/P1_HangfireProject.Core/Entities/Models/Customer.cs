@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,13 @@ namespace P1_HangfireProject.Core.Entities.Models
         public string LastName { get; set; } = string.Empty;
 
         public string Email { get; set; } = string.Empty;
+
+        [Column(TypeName = "decimal(6,2)")]
+        public decimal Balance { get; set; }
+
+        public int IsActive { get; set; }
+
+        public int IsDeleted { get; set; }
 
         public ICollection<Order> Orders { get; set; } = null!;
     }

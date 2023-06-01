@@ -1,4 +1,5 @@
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.deps.json
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.runtimeconfig.json
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.dll
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\bin\Debug\net6.0\P1_HangfireProject.Core.pdb
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.csproj.AssemblyReference.cache
@@ -9,4 +10,5 @@ C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\De
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.dll
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\refint\P1_HangfireProject.Core.dll
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.pdb
+C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\P1_HangfireProject.Core.genruntimeconfig.cache
 C:\Users\STJ80354\source\repos\P1_HangfireProject\P1_HangfireProject.Core\obj\Debug\net6.0\ref\P1_HangfireProject.Core.dll

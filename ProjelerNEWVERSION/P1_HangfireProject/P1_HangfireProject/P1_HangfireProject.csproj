@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire" Version="1.8.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -23,6 +24,7 @@
     <ProjectReference Include="..\P1_HangfireProject.Business\P1_HangfireProject.Business.csproj" />
     <ProjectReference Include="..\P1_HangfireProject.Core\P1_HangfireProject.Core.csproj" />
     <ProjectReference Include="..\P1_HangfireProject.DataAccess\P1_HangfireProject.DataAccess.csproj" />
+    <ProjectReference Include="..\P1_HangfireProject.Hangfires\P1_HangfireProject.Hangfires.csproj" />
   </ItemGroup>
 
 </Project>

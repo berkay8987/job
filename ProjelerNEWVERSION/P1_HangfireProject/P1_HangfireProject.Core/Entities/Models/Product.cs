@@ -17,5 +17,9 @@ namespace P1_HangfireProject.Core.Entities.Models
 
         [Column(TypeName = "decimal(6,2)")]
         public decimal Price { get; set; }
+
+        public int IsActive { get; set; }
+
+        public int IsDeleted { get; set; }
     }
 }

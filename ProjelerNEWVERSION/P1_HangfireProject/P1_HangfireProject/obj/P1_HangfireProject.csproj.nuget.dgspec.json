@@ -28,6 +28,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Core\\P1_HangfireProject.Core.csproj": {
+                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Core\\P1_HangfireProject.Core.csproj"
+              },
               "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj"
               }
@@ -98,6 +101,28 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -158,11 +183,70 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
-              "version": "[7.0.5, )"
+              "version": "[2.2.0, )"
             }
           },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\P1_HangfireProject.Hangfires.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\P1_HangfireProject.Hangfires.csproj",
+        "projectName": "P1_HangfireProject.Hangfires",
+        "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\P1_HangfireProject.Hangfires.csproj",
+        "packagesPath": "C:\\Users\\STJ80354\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\STJ80354\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Business\\P1_HangfireProject.Business.csproj": {
+                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Business\\P1_HangfireProject.Business.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",
@@ -215,6 +299,9 @@
               },
               "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.DataAccess\\P1_HangfireProject.DataAccess.csproj"
+              },
+              "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\P1_HangfireProject.Hangfires.csproj": {
+                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Hangfires\\P1_HangfireProject.Hangfires.csproj"
               }
             }
           }
@@ -229,6 +316,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Hangfire": {
+              "target": "Package",
+              "version": "[1.8.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.5, )"

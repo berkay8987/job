@@ -16,6 +16,11 @@ namespace P1_HangfireProject.Controllers
             return View();
         }
 
+        public IActionResult Hangfire()
+        {
+            return Redirect("/hangfire");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
