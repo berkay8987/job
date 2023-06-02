@@ -1,0 +1,17 @@
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.Business.deps.json
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.Business.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\refint\RetailStoreWebApi.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\ref\RetailStoreWebApi.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.Core.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.Core.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.Business\obj\Debug\net6.0\RetailStoreWebApi.Business.csproj.CopyComplete

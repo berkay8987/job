@@ -1,0 +1,15 @@
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.deps.json
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\refint\RetailStoreWebApi.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\ref\RetailStoreWebApi.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\bin\Debug\net6.0\RetailStoreWebApi.Core.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\bin\Debug\net6.0\RetailStoreWebApi.Core.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi.DataAccess\obj\Debug\net6.0\RetailStoreWebApi.DataAccess.csproj.CopyComplete
