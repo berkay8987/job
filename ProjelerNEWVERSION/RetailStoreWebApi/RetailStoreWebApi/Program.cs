@@ -20,6 +20,9 @@ builder.Services.AddDbContext<ProjectDatabaseContext>(options =>
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
 
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderServiceDal, OrderServiceDal>();
+
 // Configure AutoMapper
 var mapperConfig = new MapperConfiguration(mc =>
 {

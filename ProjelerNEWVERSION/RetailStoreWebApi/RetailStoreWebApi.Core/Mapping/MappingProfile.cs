@@ -14,6 +14,7 @@ namespace RetailStoreWebApi.Core.Mapping
         public MappingProfile()
         {
             CreateMap<Customer, CustomerGetModel>();
+            CreateMap<Order, OrderGetModel>();
         }
     }
 }

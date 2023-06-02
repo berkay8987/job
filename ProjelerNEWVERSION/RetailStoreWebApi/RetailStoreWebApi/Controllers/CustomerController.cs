@@ -16,17 +16,23 @@ namespace RetailStoreWebApi.Controllers
             _customerService = customerService;
         }
 
-
         [HttpGet("GetCustomers")]
-        public List<CustomerGetModel>? GetCustomers()
+        public ActionResult<List<CustomerGetModel>> GetCustomers()
         {
-            return _customerService.GetAllCustomers();
+            return _customerService.GetAllCustomers() == null 
+                ? BadRequest("No Element Found") 
+                : _customerService.GetAllCustomers();
+
+            // This doesn't work.
+            // return _customerService.GetAllCustomers() ?? BadRequest("No Element Found");
         }
 
         [HttpGet("GetCustomer/{id}")]
-        public CustomerGetModel? GetCustomerById(int id)
+        public ActionResult<CustomerGetModel> GetCustomerById(int id)
         {
-            return _customerService.GetCustomerById(id);
+            return _customerService.GetCustomerById(id) == null
+                ? BadRequest("No Element Found")
+                : _customerService.GetCustomerById(id);
         }
     }
 }
