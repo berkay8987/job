@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "km9DqUreq9DkhUgROtl3e98LD7EQyEQW9jGM4TNwrB3gUIy8TDALT/n9W812yRJJdRHeVwWT5oStoTnpwGr63g==",
+  "dgSpecHash": "hnnPHhPy7O6cWTF1uqHk/zhveZaey7CvGDK4cEo3oquhRBZVPKlOJjUHbGyDi9bvdqWrG5+V+GLtHtctPA4OUw==",
   "success": true,
   "projectFilePath": "C:\\Users\\STJ80354\\source\\repos\\P1_HangfireProject\\P1_HangfireProject.Business\\P1_HangfireProject.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\STJ80354\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.2.0\\microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\microsoft.aspnetcore.mvc.abstractions\\2.2.0\\microsoft.aspnetcore.mvc.abstractions.2.2.0.nupkg.sha512",

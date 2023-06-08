@@ -8,6 +8,7 @@ using P1_HangfireProject.Hangfires.Abstract;
 using P1_HangfireProject.Hangfires.Concrete;
 using P1_HangfireProject.Hangfires;
 using Hangfire;
+using P1_HangfireProject.DataAccess.Queries;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,9 +23,15 @@ builder.Services.AddHangfire(x =>
 );
 builder.Services.AddHangfireServer();
 
-builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
-builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddHttpClient();
+
+builder.Services.AddScoped<IExchangeService, ExchangeService>();
+builder.Services.AddScoped<IExchangeServiceDal, ExchangeServiceDal>();
 builder.Services.AddScoped<IHangfireInfo, HangfireInfo>();
+builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IProductServiceDal, ProductServiceDal>();
+builder.Services.AddScoped<IBulkService, BulkService>();
+builder.Services.AddScoped<BulkQueries>();
 
 var app = builder.Build();
 
@@ -50,6 +57,7 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 #pragma warning disable CS0618 // Type or member is obsolete
-RecurringJob.AddOrUpdate<HandleHangfire>(x => x.MyHangfireFunction(), Cron.MinuteInterval(5));
+RecurringJob.AddOrUpdate<HandleHangfire>(x => x.Test(), Cron.MinuteInterval(5));
+// RecurringJob.AddOrUpdate<HandleHangfire>(x => x.RefreshProductPrices(), Cron.MinuteInterval(5));
 
 app.Run();

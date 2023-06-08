@@ -56,6 +56,14 @@
           }
         }
       },
+      "Dapper/2.0.123": {
+        "runtime": {
+          "lib/net5.0/Dapper.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.123.33578"
+          }
+        }
+      },
       "Hangfire/1.8.2": {
         "dependencies": {
           "Hangfire.AspNetCore": "1.8.2",
@@ -404,6 +412,20 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
           "Microsoft.Extensions.FileProviders.Abstractions": "3.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0"
+        }
+      },
+      "Microsoft.Extensions.Http/7.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Logging": "7.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
+          "Microsoft.Extensions.Options": "7.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Extensions.Http.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.22.51805"
+          }
         }
       },
       "Microsoft.Extensions.Logging/7.0.0": {
@@ -872,6 +894,7 @@
       },
       "P1_HangfireProject.DataAccess/1.0.0": {
         "dependencies": {
+          "Dapper": "2.0.123",
           "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
           "P1_HangfireProject.Core": "1.0.0"
         },
@@ -881,6 +904,7 @@
       },
       "P1_HangfireProject.Hangfires/1.0.0": {
         "dependencies": {
+          "Microsoft.Extensions.Http": "7.0.0",
           "P1_HangfireProject.Business": "1.0.0"
         },
         "runtime": {
@@ -908,6 +932,13 @@
       "sha512": "sha512-EycyMsb6rD2PK9P0SyibFfEhvWWttdrYhyPF4f41uzdB/44yQlV+2Wehxyg489Rj6gbPvSPgbKq0xsHJBhipZA==",
       "path": "azure.identity/1.6.0",
       "hashPath": "azure.identity.1.6.0.nupkg.sha512"
+    },
+    "Dapper/2.0.123": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ==",
+      "path": "dapper/2.0.123",
+      "hashPath": "dapper.2.0.123.nupkg.sha512"
     },
     "Hangfire/1.8.2": {
       "type": "package",
@@ -1111,6 +1142,13 @@
       "sha512": "sha512-qeDWS5ErmkUN96BdQqpmeCmLk5HJWQ/SPw3ux5v5/Qb0hKZS5wojBMulnBC7JUEiBwg7Ir71Yjf1lFiRT5MdtQ==",
       "path": "microsoft.extensions.hosting.abstractions/3.0.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.3.0.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Http/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9Pq9f/CvOSz0t9yQa6g1uWpxa2sm13daLFm8EZwy9MaQUjKXWdNUXQwIxwhmba5N83UIqURiPHSNqGK1vfWF2w==",
+      "path": "microsoft.extensions.http/7.0.0",
+      "hashPath": "microsoft.extensions.http.7.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/7.0.0": {
       "type": "package",

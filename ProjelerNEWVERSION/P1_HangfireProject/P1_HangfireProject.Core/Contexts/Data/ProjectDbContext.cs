@@ -20,6 +20,10 @@ namespace P1_HangfireProject.Core.Contexts.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<ExchangeRate> ExchangeRates { get; set; }
+
+        public DbSet<Rates> Rates { get; set; }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Order>()
@@ -34,7 +38,6 @@ namespace P1_HangfireProject.Core.Contexts.Data
                     FirstName = "Berkay",
                     LastName  = "Ates",
                     Email = "rastgele@rastgele.com",
-                    Balance = 2000.00M,
                     IsActive = 1,
                     IsDeleted = 0
                 }

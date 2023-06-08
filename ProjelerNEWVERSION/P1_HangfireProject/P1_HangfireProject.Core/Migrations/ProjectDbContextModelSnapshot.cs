@@ -30,9 +30,6 @@ namespace P1_HangfireProject.Core.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CustomerId"));
 
-                    b.Property<decimal>("Balance")
-                        .HasColumnType("decimal(6,2)");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -54,6 +51,42 @@ namespace P1_HangfireProject.Core.Migrations
                     b.HasKey("CustomerId");
 
                     b.ToTable("Customers");
+
+                    b.HasData(
+                        new
+                        {
+                            CustomerId = 11,
+                            Email = "rastgele@rastgele.com",
+                            FirstName = "Berkay",
+                            IsActive = 1,
+                            IsDeleted = 0,
+                            LastName = "Ates"
+                        });
+                });
+
+            modelBuilder.Entity("P1_HangfireProject.Core.Entities.Models.ExchangeRate", b =>
+                {
+                    b.Property<int>("ExchangeRateId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExchangeRateId"));
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2")
+                        .HasAnnotation("Relational:JsonPropertyName", "date");
+
+                    b.Property<decimal>("EUR")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<int>("RatesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ExchangeRateId");
+
+                    b.HasIndex("RatesId");
+
+                    b.ToTable("ExchangeRates");
                 });
 
             modelBuilder.Entity("P1_HangfireProject.Core.Entities.Models.Order", b =>
@@ -130,7 +163,10 @@ namespace P1_HangfireProject.Core.Migrations
                     b.Property<int>("IsDeleted")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
+                    b.Property<decimal>("PriceTRY")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal>("PriceUSD")
                         .HasColumnType("decimal(6,2)");
 
                     b.Property<string>("ProductName")
@@ -143,6 +179,36 @@ namespace P1_HangfireProject.Core.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("P1_HangfireProject.Core.Entities.Models.Rates", b =>
+                {
+                    b.Property<int>("RatesId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatesId"));
+
+                    b.Property<decimal>("TRY")
+                        .HasColumnType("decimal(6,2)")
+                        .HasAnnotation("Relational:JsonPropertyName", "TRY");
+
+                    b.HasKey("RatesId");
+
+                    b.ToTable("Rates");
+
+                    b.HasAnnotation("Relational:JsonPropertyName", "rates");
+                });
+
+            modelBuilder.Entity("P1_HangfireProject.Core.Entities.Models.ExchangeRate", b =>
+                {
+                    b.HasOne("P1_HangfireProject.Core.Entities.Models.Rates", "Rates")
+                        .WithMany()
+                        .HasForeignKey("RatesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Rates");
                 });
 
             modelBuilder.Entity("P1_HangfireProject.Core.Entities.Models.Order", b =>

@@ -18,9 +18,6 @@ namespace P1_HangfireProject.Core.Entities.Models
 
         public string Email { get; set; } = string.Empty;
 
-        [Column(TypeName = "decimal(6,2)")]
-        public decimal Balance { get; set; }
-
         public int IsActive { get; set; }
 
         public int IsDeleted { get; set; }

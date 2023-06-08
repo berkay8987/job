@@ -16,7 +16,10 @@ namespace P1_HangfireProject.Core.Entities.Models
         public int Quantity { get; set; }
 
         [Column(TypeName = "decimal(6,2)")]
-        public decimal Price { get; set; }
+        public decimal PriceUSD { get; set; }
+
+        [Column(TypeName = "decimal(6,2)")]
+        public decimal PriceTRY { get; set; }
 
         public int IsActive { get; set; }
 
