@@ -17,7 +17,5 @@ public partial class Customer
 
     public int IsDeleted { get; set; }
 
-    public decimal Balance { get; set; }
-
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }

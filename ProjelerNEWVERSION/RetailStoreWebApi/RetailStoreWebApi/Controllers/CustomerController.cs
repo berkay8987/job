@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RetailStoreWebApi.Core.Entities.ApiModels;
 using RetailStoreWebApi.Business.Abstract;
+using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PutModels;
 
 namespace RetailStoreWebApi.Controllers
 {
@@ -11,28 +12,35 @@ namespace RetailStoreWebApi.Controllers
     {
         private readonly ICustomerService _customerService;
 
-        public CustomerController(ICustomerService customerService)
+        public CustomerController(
+            ICustomerService customerService)
         {
             _customerService = customerService;
         }
 
-        [HttpGet("GetCustomers")]
-        public ActionResult<List<CustomerGetModel>> GetCustomers()
+        [HttpGet("GetAllCustomers")]
+        public ActionResult<List<CustomerGetModel>?> GetAllCustomers()
         {
-            return _customerService.GetAllCustomers() == null 
-                ? BadRequest("No Element Found") 
-                : _customerService.GetAllCustomers();
-
-            // This doesn't work.
-            // return _customerService.GetAllCustomers() ?? BadRequest("No Element Found");
+            return _customerService.GetAllCustomers() == null ?
+                BadRequest("No Customer was found!") :
+                _customerService.GetAllCustomers();
         }
 
-        [HttpGet("GetCustomer/{id}")]
-        public ActionResult<CustomerGetModel> GetCustomerById(int id)
+        [HttpGet("GetCustomerById/{customerId}")]
+        public ActionResult<CustomerGetModel?> GetCustomerById(int customerId)
         {
-            return _customerService.GetCustomerById(id) == null
-                ? BadRequest("No Element Found")
-                : _customerService.GetCustomerById(id);
+            return _customerService.GetCustomerById(customerId) == null ?
+                BadRequest("Element Not Found!") :
+                _customerService.GetCustomerById(customerId);
+        }
+
+        [HttpPut("UpdateCustomer")]
+        public ActionResult<CustomerGetModel?> UpdateCustomer([FromBody] CustomerPutModel customerPutModel)
+        {
+            var data = _customerService.UpdateCustomer(customerPutModel.CustomerId, customerPutModel.Email);
+            return data == null ?
+                BadRequest("Element Not Found!") :
+                data;
         }
     }
 }

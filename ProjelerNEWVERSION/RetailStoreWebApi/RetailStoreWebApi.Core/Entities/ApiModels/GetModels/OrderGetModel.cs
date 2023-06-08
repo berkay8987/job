@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RetailStoreWebApi.Core.Entities.ApiModels
+namespace RetailStoreWebApi.Core.Entities.ApiModels.GetModels
 {
     public class OrderGetModel
     {

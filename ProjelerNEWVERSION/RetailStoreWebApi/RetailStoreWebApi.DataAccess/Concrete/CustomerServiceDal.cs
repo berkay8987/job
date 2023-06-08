@@ -1,11 +1,11 @@
-﻿using RetailStoreWebApi.Core.Contexts.Data;
-using RetailStoreWebApi.Core.Entities.Models;
-using RetailStoreWebApi.DataAccess.Abstract;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using RetailStoreWebApi.Core.Contexts.Data;
+using RetailStoreWebApi.Core.Entities.Models;
+using RetailStoreWebApi.DataAccess.Abstract;
 
 namespace RetailStoreWebApi.DataAccess.Concrete
 {
@@ -18,26 +18,39 @@ namespace RetailStoreWebApi.DataAccess.Concrete
             _context = context;
         }
 
-        public List<Customer> GetAllCustomersDal()
+        public List<Customer>? GetAllCustomersDal()
         {
-            return _context.Customers
-                .Where(x => x.IsActive == 1 && x.IsDeleted == 0)
-                .ToList();
+            return _context.Customers.Where(x => x.IsActive == 1 && x.IsDeleted == 0).ToList();
         }
 
-        public Customer GetCustomerByIdDal(int id)
+        public Customer? GetCustomerByIdDal(int customerId)
         {
             return _context.Customers
-                .Where(x => x.IsActive == 1 && x.IsDeleted == 0 && x.CustomerId == id)
+                .Where(x => x.CustomerId == customerId && x.IsActive == 1 && x.IsDeleted == 0)
                 .SingleOrDefault();
         }
 
-        public List<Order> GetOrdersByCustomerIdDal(int id)
+        public Customer? GetInactiveCustomerByEmail(string email)
         {
-            return _context.Orders
-                .Where(x => x.CustomerId == id && x.IsActive == 1 && x.IsDeleted == 0)
-                .ToList();
+            return _context.Customers
+                .Where(x => x.Email == email && x.IsActive == 0 && x.IsDeleted == 1)
+                .SingleOrDefault();
         }
 
+        public Customer? UpdateCustomerDal(string email, Customer customer)
+        {
+            customer.Email = email;
+            _context.SaveChanges();
+            return customer;
+        }
+
+        public Customer? AddNewCustomerDal(Customer customer)
+        {
+            customer.IsActive = 1;
+            customer.IsDeleted = 0;
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return customer;
+        }
     }
 }

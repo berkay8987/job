@@ -7,11 +7,16 @@ namespace RetailStoreWebApi.Core.Contexts.Data;
 
 public partial class ProjectDatabaseContext : DbContext
 {
-    public ProjectDatabaseContext() { }
+    public ProjectDatabaseContext()
+    {
+
+    }
 
     public ProjectDatabaseContext(DbContextOptions<ProjectDatabaseContext> options) : base(options) { }
 
     public virtual DbSet<Customer> Customers { get; set; }
+
+    public virtual DbSet<ExchangeRate> ExchangeRates { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
 
@@ -19,8 +24,22 @@ public partial class ProjectDatabaseContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<Rate> Rates { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ExchangeRate>(entity =>
+        {
+            entity.HasIndex(e => e.RatesId, "IX_ExchangeRates_RatesId");
+
+            entity.Property(e => e.Date).HasDefaultValueSql("('0001-01-01T00:00:00.0000000')");
+            entity.Property(e => e.Eur)
+                .HasColumnType("decimal(6, 2)")
+                .HasColumnName("EUR");
+
+            entity.HasOne(d => d.Rates).WithMany(p => p.ExchangeRates).HasForeignKey(d => d.RatesId);
+        });
+
         modelBuilder.Entity<Order>(entity =>
         {
             entity.HasIndex(e => e.CustomerId, "IX_Orders_CustomerId");
@@ -39,7 +58,21 @@ public partial class ProjectDatabaseContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.Property(e => e.Price).HasColumnType("decimal(6, 2)");
+            entity.Property(e => e.PriceTry)
+                .HasColumnType("decimal(6, 2)")
+                .HasColumnName("PriceTRY");
+            entity.Property(e => e.PriceUsd)
+                .HasColumnType("decimal(6, 2)")
+                .HasColumnName("PriceUSD");
+        });
+
+        modelBuilder.Entity<Rate>(entity =>
+        {
+            entity.HasKey(e => e.RatesId);
+
+            entity.Property(e => e.Try)
+                .HasColumnType("decimal(6, 2)")
+                .HasColumnName("TRY");
         });
 
         OnModelCreatingPartial(modelBuilder);

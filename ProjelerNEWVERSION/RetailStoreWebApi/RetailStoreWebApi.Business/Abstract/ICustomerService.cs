@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RetailStoreWebApi.Core.Entities.ApiModels;
-using RetailStoreWebApi.Core.Entities.Models;
+using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PostModels;
 
 namespace RetailStoreWebApi.Business.Abstract
 {
@@ -12,8 +12,10 @@ namespace RetailStoreWebApi.Business.Abstract
     {
         List<CustomerGetModel>? GetAllCustomers();
 
-        CustomerGetModel? GetCustomerById(int id);
+        CustomerGetModel? GetCustomerById(int customerId);
 
-        List<Order>? GetOrdersByCustomerId(int id);
+        CustomerGetModel? UpdateCustomer(int customerId, string email);
+
+        CustomerGetModel? AddNewCustomer(CustomerPostModel customerPostModel);
     }
 }

@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using RetailStoreWebApi.Core.Entities.Models;
-using RetailStoreWebApi.Core.Entities.ApiModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PostModels;
 
 namespace RetailStoreWebApi.Core.Mapping
 {
@@ -15,6 +16,9 @@ namespace RetailStoreWebApi.Core.Mapping
         {
             CreateMap<Customer, CustomerGetModel>();
             CreateMap<Order, OrderGetModel>();
+            CreateMap<OrderDetail, OrderDetailGetModel>();
+            CreateMap<Product, ProductGetModel>();
+            CreateMap<CustomerPostModel, Customer>();
         }
     }
 }

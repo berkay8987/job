@@ -11,9 +11,11 @@ public partial class Product
 
     public int Quantity { get; set; }
 
-    public decimal Price { get; set; }
+    public decimal PriceUsd { get; set; }
 
     public int IsActive { get; set; }
 
     public int IsDeleted { get; set; }
+
+    public decimal PriceTry { get; set; }
 }

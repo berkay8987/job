@@ -1,12 +1,11 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
-using RetailStoreWebApi.Business.Abstract;
-using RetailStoreWebApi.Business.Concrete;
+using RetailStoreWebApi.Core.Contexts.Data;
+using RetailStoreWebApi.Core.Mapping;
 using RetailStoreWebApi.DataAccess.Abstract;
 using RetailStoreWebApi.DataAccess.Concrete;
-using RetailStoreWebApi.Core.Contexts.Data;
-using System.Reflection;
-using AutoMapper;
-using RetailStoreWebApi.Core.Mapping;
+using RetailStoreWebApi.Business.Abstract;
+using RetailStoreWebApi.Business.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,20 +16,18 @@ builder.Services.AddDbContext<ProjectDatabaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
 
-builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IProductServiceDal, ProductServiceDal>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
-builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<IOrderServiceDal, OrderServiceDal>();
-
-// Configure AutoMapper
+// Configre AutoMapper
 var mapperConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new MappingProfile());
 });
 IMapper mapper = mapperConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
-
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8iVsCBXYcNSHNxnje+Koxo0KO9JZzdcJuqvutAG8l4tLcvauslALJupuz7aDf8wSwdeecNeex6MYFgpM0d/sKw==",
+  "dgSpecHash": "2RktOM8MMw1xv05gx00jqSsQ+Oe6X0nu2tS4Ez5UN0LigP5D6v027U+Ye7XX/ltgXv9CF7jYBio5ZZuoHV5lvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApi\\RetailStoreWebApi.DataAccess\\RetailStoreWebApi.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\STJ80354\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\STJ80354\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

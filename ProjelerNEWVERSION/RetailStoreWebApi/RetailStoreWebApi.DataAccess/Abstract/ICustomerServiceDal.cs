@@ -9,10 +9,14 @@ namespace RetailStoreWebApi.DataAccess.Abstract
 {
     public interface ICustomerServiceDal
     {
-        List<Customer> GetAllCustomersDal();
+        List<Customer>? GetAllCustomersDal();
 
-        Customer GetCustomerByIdDal(int id);
+        Customer? GetCustomerByIdDal(int customerId);
 
-        List<Order> GetOrdersByCustomerIdDal(int id);
+        Customer? GetInactiveCustomerByEmail(string email);
+
+        Customer? UpdateCustomerDal(string email, Customer customer);
+
+        Customer? AddNewCustomerDal(Customer customer);
     }
 }

@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DRcCoDMiMEJ6avIYe8mkpxtSjFCJeB7sw3HHXOXQj0yi8Qn6Jx46mHcnKh2Qra8Nvzxvav4m1LH80TOoyY9phw==",
+  "dgSpecHash": "/3yy3SCsfjr+08AyV4y4x+wjXTntvf5vUNHkOn4lDq3OWVk/GxzOjzYZ4zGh8RH06FjFbSYDz3JuBUjAsTuEcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApi\\RetailStoreWebApi.Core\\RetailStoreWebApi.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\STJ80354\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
-    "C:\\Users\\STJ80354\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\STJ80354\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

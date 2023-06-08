@@ -92,4 +92,3 @@ C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi\bin\Debug\net
 C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi\bin\Debug\net6.0\RetailStoreWebApi.Core.pdb
 C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi\bin\Debug\net6.0\RetailStoreWebApi.DataAccess.pdb
 C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi\bin\Debug\net6.0\AutoMapper.dll
-C:\Users\STJ80354\source\repos\RetailStoreWebApi\RetailStoreWebApi\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
