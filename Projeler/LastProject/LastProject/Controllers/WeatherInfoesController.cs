@@ -83,7 +83,7 @@ namespace LastProject.Controllers
             }
 
             using var client = _httpClientFactory.CreateClient();
-            string apiKey = "ef5f44f0f7fd4e83bb3190630231505";
+            string apiKey = "";
 
             var request = new HttpRequestMessage
             {
