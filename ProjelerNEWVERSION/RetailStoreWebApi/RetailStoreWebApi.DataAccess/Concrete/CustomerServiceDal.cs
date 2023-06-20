@@ -30,10 +30,17 @@ namespace RetailStoreWebApi.DataAccess.Concrete
                 .SingleOrDefault();
         }
 
-        public Customer? GetInactiveCustomerByEmail(string email)
+        public Customer? GetInactiveCustomerByEmailDal(string email)
         {
             return _context.Customers
                 .Where(x => x.Email == email && x.IsActive == 0 && x.IsDeleted == 1)
+                .SingleOrDefault();
+        }
+
+        public Customer? GetCustomerByEmailDal(string email)
+        {
+            return _context.Customers
+                .Where(x => x.Email == email && x.IsActive == 1 && x.IsDeleted == 0)
                 .SingleOrDefault();
         }
 
@@ -51,6 +58,20 @@ namespace RetailStoreWebApi.DataAccess.Concrete
             _context.Customers.Add(customer);
             _context.SaveChanges();
             return customer;
+        }
+
+        public void ReactivateCustomerDal(Customer customer)
+        {
+            customer.IsActive = 1;
+            customer.IsDeleted = 0;
+            _context.SaveChanges();
+        }
+
+        public void DeactivateCustomerDal(Customer customer)
+        {
+            customer.IsActive = 0;
+            customer.IsDeleted = 1;
+            _context.SaveChanges();
         }
     }
 }

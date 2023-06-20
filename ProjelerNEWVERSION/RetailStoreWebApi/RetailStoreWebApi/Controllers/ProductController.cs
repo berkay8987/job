@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RetailStoreWebApi.Business.Abstract;
 using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PostModels;
 using RetailStoreWebApi.Core.Entities.ApiModels.PutModels;
 
 namespace RetailStoreWebApi.Controllers
@@ -21,8 +22,8 @@ namespace RetailStoreWebApi.Controllers
         [HttpGet("GetAllProducts")]
         public ActionResult<List<ProductGetModel>?> GetAllProducts()
         {
-            return _productService.GetAllProducts() == null ? 
-                BadRequest("No Product was found!") : 
+            return _productService.GetAllProducts() == null ?
+                BadRequest("No Product was found!") :
                 _productService.GetAllProducts();
         }
 
@@ -30,7 +31,7 @@ namespace RetailStoreWebApi.Controllers
         public ActionResult<ProductGetModel?> GetProductById(int productId)
         {
             return _productService.GetProductById(productId) == null ?
-                BadRequest("Not found!") : 
+                BadRequest("Not found!") :
                 _productService.GetProductById(productId);
         }
 
@@ -41,6 +42,23 @@ namespace RetailStoreWebApi.Controllers
             return data == null ?
                 BadRequest("Element not found!") :
                 data;
+        }
+
+        [HttpPost("AddNewProduct")]
+        public ActionResult<ProductGetModel?> AddNewProduct([FromBody] ProductPostModel productPostModel)
+        {
+            var data = _productService.AddNewProduct(productPostModel);
+            return data == null ?
+                BadRequest("Couldn't Add Product, Either it already exists or something else went wrong.") :
+                data;
+        }
+
+        [HttpDelete("DeleteProduct/{productId}")]
+        public ActionResult<ProductGetModel?> DeleteProduct(int productId)
+        {
+            return _productService.DeactivateProduct(productId) == null ?
+                BadRequest("Couldn't delete product") :
+                _productService.DeactivateProduct(productId);
         }
     }
 }

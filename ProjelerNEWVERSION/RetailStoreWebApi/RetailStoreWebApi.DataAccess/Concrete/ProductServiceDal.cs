@@ -44,5 +44,48 @@ namespace RetailStoreWebApi.DataAccess.Concrete
             product.PriceTry = product.PriceUsd * _try;
             _context.SaveChanges();
         }
+
+        public Product? GetInactiveProductByNameDal(string productName)
+        {
+            return _context.Products
+                .Where(x => x.ProductName == productName && x.IsActive == 0 && x.IsDeleted == 1)
+                .SingleOrDefault();
+        }
+
+        public Product? GetProductByNameDal(string productName)
+        {
+            return _context.Products
+                .Where(x => x.ProductName == productName && x.IsActive == 1 && x.IsDeleted == 0)
+                .SingleOrDefault();
+        }
+
+        public void ReactivateProductDal(Product product)
+        {
+            product.IsActive = 1;
+            product.IsDeleted = 0;
+            _context.SaveChanges();
+        }
+
+        public void DeactivateProductDal(Product product)
+        {
+            product.IsActive = 0;
+            product.IsDeleted = 1;
+            _context.SaveChanges();
+        }
+
+        public Product? AddNewProductDal(Product prodcut)
+        {
+            prodcut.IsActive = 1;
+            prodcut.IsDeleted = 0;
+            _context.Products.Add(prodcut);
+            _context.SaveChanges();
+            return prodcut;
+        }
+
+        public void IncreaseQuantityOfAProductDal(Product product, int increaseBy)
+        {
+            product.Quantity += increaseBy;
+            _context.SaveChanges();
+        }
     }
 }

@@ -17,5 +17,7 @@ namespace RetailStoreWebApi.Business.Abstract
         CustomerGetModel? UpdateCustomer(int customerId, string email);
 
         CustomerGetModel? AddNewCustomer(CustomerPostModel customerPostModel);
+
+        CustomerGetModel? DeactivateCustomer(int customerId);
     }
 }

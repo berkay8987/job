@@ -8,6 +8,9 @@ using RetailStoreWebApi.DataAccess.Abstract;
 using RetailStoreWebApi.Core.Entities.Models;
 using AutoMapper;
 using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PostModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PutModels;
+using RetailStoreWebApi.DataAccess.Concrete;
 
 namespace RetailStoreWebApi.Business.Concrete
 {
@@ -49,6 +52,50 @@ namespace RetailStoreWebApi.Business.Concrete
             _productServiceDal.UpdatePriceProductDal(newProduct);
             var newProductGetModel = _mapper.Map<ProductGetModel>(newProduct);
             return newProductGetModel;
+        }
+
+        public ProductGetModel? AddNewProduct(ProductPostModel productPostModel)
+        {
+            /*
+             * 1) Product exists in the db but is inactive -> make it active
+             * 2) Product does not exists -> add product
+             * 3) Product already exists and active. -> quantity++;
+             */
+
+            var productInactive = _productServiceDal.GetInactiveProductByNameDal(productPostModel.ProductName);
+            var productActive = _productServiceDal.GetProductByNameDal(productPostModel.ProductName);
+
+            // 1)
+            if (productInactive != null)
+            {
+                _productServiceDal.ReactivateProductDal(productInactive);
+                var productGetModel1 = _mapper.Map<ProductGetModel>(productInactive);
+                return productGetModel1;
+            }
+
+            // 3)
+            else if (productActive != null)
+            {
+                _productServiceDal.IncreaseQuantityOfAProductDal(productActive, 1);
+                var productGetModel2 = _mapper.Map<ProductGetModel>(productActive);
+                return productGetModel2;
+            }
+
+            // 2)
+            var productToAdd = _mapper.Map<Product>(productPostModel);
+            var newProduct = _productServiceDal.AddNewProductDal(productToAdd);
+            var productGetModel = _mapper.Map<ProductGetModel>(newProduct);
+            return productGetModel ?? null;
+        }
+
+        public ProductGetModel? DeactivateProduct(int productId)
+        {
+            var product = _productServiceDal.GetProductByIdDal(productId);
+            if (product == null) { return null; }
+            _productServiceDal.DeactivateProductDal(product);
+
+            var productGetModel = _mapper.Map<ProductGetModel>(product);
+            return productGetModel;
         }
     }
 }

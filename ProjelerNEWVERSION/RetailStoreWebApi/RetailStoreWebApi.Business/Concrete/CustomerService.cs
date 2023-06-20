@@ -53,20 +53,51 @@ namespace RetailStoreWebApi.Business.Concrete
 
         public CustomerGetModel? AddNewCustomer(CustomerPostModel customerPostModel)
         {
-            // Check if data exists but inactive.
-            var customer = _customerServiceDal.GetInactiveCustomerByEmail(customerPostModel.Email);
-            if (customer != null)
+            /*
+             * 1) Customer exists in the db but is inactive 
+             * 2) Customer does not exists
+             * 3) Customer already exists and active.
+             */
+
+            // Returns null if user does exits but is inactive.
+            var customerInactive = _customerServiceDal.GetInactiveCustomerByEmailDal(customerPostModel.Email);
+
+            // Returns null if user doesn't exist.
+            var customerActive = _customerServiceDal.GetCustomerByEmailDal(customerPostModel.Email);
+
+            // 1)
+            if (customerInactive != null)
             {
-                
+                _customerServiceDal.ReactivateCustomerDal(customerInactive);
+                var customerGetModel1 = _mapper.Map<CustomerGetModel>(customerInactive);
+                return customerGetModel1 ?? null;
             }
 
-            else if (customer == null)
+            // 3)
+            else if (customerActive != null)
             {
-                var customerToAdd = _mapper.Map<Customer>(customerPostModel);
-                var newCustomer = _customerServiceDal.AddNewCustomerDal(customerToAdd);
-                var customerGetModel = _mapper.Map<CustomerGetModel>(newCustomer);
-                return customerGetModel;
+                var customerGetModel2 = _mapper.Map<CustomerGetModel>(customerActive);
+                return customerGetModel2 ?? null;
             }
+
+            // 2)
+            var customerToAdd = _mapper.Map<Customer>(customerPostModel);
+            var newCustomer = _customerServiceDal.AddNewCustomerDal(customerToAdd);
+            var customerGetModel = _mapper.Map<CustomerGetModel>(newCustomer);
+            return customerGetModel ?? null;
+        }
+
+        public CustomerGetModel? DeactivateCustomer(int customerId)
+        {
+            var customer = _customerServiceDal.GetCustomerByIdDal(customerId);
+            if (customer == null)
+            {
+                return null;
+            }
+            _customerServiceDal.DeactivateCustomerDal(customer);
+
+            var customerGetModel = _mapper.Map<CustomerGetModel>(customer);
+            return customerGetModel;
         }
     }
 }

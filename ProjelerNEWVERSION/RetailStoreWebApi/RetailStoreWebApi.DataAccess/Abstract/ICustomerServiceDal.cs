@@ -13,10 +13,16 @@ namespace RetailStoreWebApi.DataAccess.Abstract
 
         Customer? GetCustomerByIdDal(int customerId);
 
-        Customer? GetInactiveCustomerByEmail(string email);
+        Customer? GetInactiveCustomerByEmailDal(string email);
+
+        Customer? GetCustomerByEmailDal(string email);
 
         Customer? UpdateCustomerDal(string email, Customer customer);
 
         Customer? AddNewCustomerDal(Customer customer);
+
+        void ReactivateCustomerDal(Customer customer);
+
+        void DeactivateCustomerDal(Customer customer);
     }
 }

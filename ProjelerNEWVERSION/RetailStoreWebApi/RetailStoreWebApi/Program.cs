@@ -18,10 +18,17 @@ builder.Services.AddDbContext<ProjectDatabaseContext>(options =>
 
 builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+
 builder.Services.AddScoped<IProductServiceDal, ProductServiceDal>();
 builder.Services.AddScoped<IProductService, ProductService>();
 
-// Configre AutoMapper
+builder.Services.AddScoped<IOrderServiceDal, OrderServiceDal>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+
+builder.Services.AddScoped<IOrderDetailServiceDal, OrderDetailServiceDal>();
+builder.Services.AddScoped<IOrderDetailService, OrderDetailService>();
+
+// Configure AutoMapper
 var mapperConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new MappingProfile());

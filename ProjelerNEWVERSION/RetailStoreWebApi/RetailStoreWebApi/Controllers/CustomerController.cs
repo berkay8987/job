@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using RetailStoreWebApi.Business.Abstract;
 using RetailStoreWebApi.Core.Entities.ApiModels.GetModels;
+using RetailStoreWebApi.Core.Entities.ApiModels.PostModels;
 using RetailStoreWebApi.Core.Entities.ApiModels.PutModels;
 
 namespace RetailStoreWebApi.Controllers
@@ -41,6 +42,23 @@ namespace RetailStoreWebApi.Controllers
             return data == null ?
                 BadRequest("Element Not Found!") :
                 data;
+        }
+
+        [HttpPost("AddNewCustomer")]
+        public ActionResult<CustomerGetModel?> AddNewCustomer([FromBody] CustomerPostModel customerPostModel)
+        {
+            var data = _customerService.AddNewCustomer(customerPostModel);
+            return data == null ?
+                BadRequest("Couldn't Add Customer, Either it already exists or something else went wrong.") :
+                data;
+        }
+
+        [HttpDelete("DeleteCustomer/{customerId}")]
+        public ActionResult<CustomerGetModel?> DeleteCustomer(int customerId)
+        {
+            return _customerService.DeactivateCustomer(customerId) == null ?
+                BadRequest("Couldn't delete customer") :
+                _customerService.DeactivateCustomer(customerId);
         }
     }
 }

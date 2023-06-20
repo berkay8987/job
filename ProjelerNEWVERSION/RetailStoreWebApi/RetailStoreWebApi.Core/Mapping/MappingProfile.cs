@@ -19,6 +19,10 @@ namespace RetailStoreWebApi.Core.Mapping
             CreateMap<OrderDetail, OrderDetailGetModel>();
             CreateMap<Product, ProductGetModel>();
             CreateMap<CustomerPostModel, Customer>();
+            CreateMap<Order, OrderGetModel>();
+            CreateMap<OrderPostModel, Order>();
+            CreateMap<OrderDetail, OrderDetailGetModel>();
+            CreateMap<OrderDetailPostModel, OrderDetail>();
         }
     }
 }
