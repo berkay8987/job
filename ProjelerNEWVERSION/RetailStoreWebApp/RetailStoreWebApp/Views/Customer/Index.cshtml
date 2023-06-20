@@ -1,0 +1,36 @@
+﻿@model IEnumerable<RetailStoreWebApp.Core.Entities.Models.Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Customers</h1>
+
+<p><a class="btn btn-primary">Create New Customer</a></p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+            <th>@Html.DisplayNameFor(model => model.LastName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(int i = 0; i < 10; i++)
+        {
+            <tr>
+                <th>@(i+1)</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>email</td>
+                <td>
+                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

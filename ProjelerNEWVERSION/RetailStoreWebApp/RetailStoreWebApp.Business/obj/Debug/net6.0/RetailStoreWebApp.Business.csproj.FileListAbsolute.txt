@@ -1,0 +1,17 @@
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.Business.deps.json
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.Business.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.Core.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.Core.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.csproj.CopyComplete
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\refint\RetailStoreWebApp.Business.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\RetailStoreWebApp.Business.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Business\obj\Debug\net6.0\ref\RetailStoreWebApp.Business.dll

@@ -1,0 +1,17 @@
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.deps.json
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.Core.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.Core.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.csproj.AssemblyReference.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.AssemblyInfo.cs
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.csproj.CopyComplete
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\refint\RetailStoreWebApp.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.pdb
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\ref\RetailStoreWebApp.DataAccess.dll
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\bin\Debug\net6.0\RetailStoreWebApp.DataAccess.runtimeconfig.json
+C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.DataAccess\obj\Debug\net6.0\RetailStoreWebApp.DataAccess.genruntimeconfig.cache
