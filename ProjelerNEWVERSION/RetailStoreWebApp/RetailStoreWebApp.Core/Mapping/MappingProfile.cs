@@ -17,6 +17,7 @@ namespace RetailStoreWebApp.Core.Mapping
             CreateMap<CustomerPutModel, Customer>();
             CreateMap<Product, ProductGetModel>();
             CreateMap<ProductPutModel, Product>();
+            CreateMap<ProductPostModel, Product>();
         }
     }
 }

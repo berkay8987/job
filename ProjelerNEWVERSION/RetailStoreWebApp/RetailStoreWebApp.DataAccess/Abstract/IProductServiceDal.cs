@@ -13,6 +13,16 @@ namespace RetailStoreWebApp.DataAccess.Abstract
 
         Product? GetProductByIdDal(int id);
 
+        Product? GetProductByNameDal(string productName);
+
+        Product? GetInactiveProductByNameDal(string productName);
+
         void UpdateProductDal(Product product, int quantity, decimal priceUsd);
+
+        void DeactivateProductDal(Product product);
+
+        void ReactivateProductDal(Product product);
+
+        void AddNewProductDal(Product product);
     }
 }

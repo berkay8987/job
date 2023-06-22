@@ -43,5 +43,29 @@ namespace RetailStoreWebApp.Business.Concrete
             var productToUpdate = _productServiceDal.GetProductByIdDal(productPutModel.ProductId);
             _productServiceDal.UpdateProductDal(productToUpdate, productPutModel.Quantity, productPutModel.PriceUsd);
         }
+
+        public void DeactivateProduct(int id)
+        {
+            var productToDeactivate = _productServiceDal.GetProductByIdDal(id);
+            _productServiceDal.DeactivateProductDal(productToDeactivate);
+        }
+
+        public void AddNewProduct(ProductPostModel productPostModel)
+        {
+            var tempProduct1 = _productServiceDal.GetProductByNameDal(productPostModel.ProductName);
+            if (tempProduct1 != null) 
+            {
+                return;
+            }
+
+            var tempProduct2 = _productServiceDal.GetInactiveProductByNameDal(productPostModel.ProductName);
+            if (tempProduct2 != null)
+            {
+                _productServiceDal.ReactivateProductDal(tempProduct2);
+            }
+
+            var productToAdd = _mapper.Map<ProductPostModel, Product>(productPostModel);
+            _productServiceDal.AddNewProductDal(productToAdd);
+        }
     }
 }

@@ -33,5 +33,35 @@ namespace RetailStoreWebApp.Controllers
             _productService.UpdateProduct(productPutModel);
             return RedirectToAction(nameof(Index));
         }
+
+        // GET
+        public IActionResult Delete(int id)
+        {
+            return View(_productService.GetProductById(id));
+        }
+
+        // POST
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirm(int id)
+        {
+            _productService.DeactivateProduct(id);
+            return RedirectToAction(nameof(Index));
+        }
+
+        // GET
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(ProductPostModel productPostModel)
+        {
+            _productService.AddNewProduct(productPostModel);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

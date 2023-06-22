@@ -14,5 +14,9 @@ namespace RetailStoreWebApp.Business.Abstract
         ProductGetModel GetProductById(int id);
 
         void UpdateProduct(ProductPutModel productPutModel);
+
+        void DeactivateProduct(int id);
+
+        void AddNewProduct(ProductPostModel productPostModel);
     }
 }

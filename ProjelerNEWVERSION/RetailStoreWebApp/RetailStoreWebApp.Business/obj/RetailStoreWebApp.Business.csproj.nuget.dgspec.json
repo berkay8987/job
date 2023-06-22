@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj": {}
+    "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj": {
+    "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj",
         "projectName": "RetailStoreWebApp.Business",
-        "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj",
-        "packagesPath": "C:\\Users\\STJ80354\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\obj\\",
+        "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\RetailStoreWebApp.Business.csproj",
+        "packagesPath": "C:\\Users\\Berkay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\STJ80354\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Berkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
-                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj"
+              "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj"
               },
-              "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj"
+              "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj"
               }
             }
           }
@@ -68,21 +68,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
+    "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj",
         "projectName": "RetailStoreWebApp.Core",
-        "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj",
-        "packagesPath": "C:\\Users\\STJ80354\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\obj\\",
+        "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj",
+        "packagesPath": "C:\\Users\\Berkay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\STJ80354\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Berkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -149,21 +149,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj": {
+    "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj",
         "projectName": "RetailStoreWebApp.DataAccess",
-        "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\STJ80354\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\RetailStoreWebApp.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Berkay\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\STJ80354\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Berkay\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -177,8 +177,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
-                "projectPath": "C:\\Users\\STJ80354\\source\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj"
+              "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj": {
+                "projectPath": "C:\\Users\\Berkay\\Desktop\\bekomate\\Kod\\repos\\RetailStoreWebApp\\RetailStoreWebApp.Core\\RetailStoreWebApp.Core.csproj"
               }
             }
           }
@@ -230,7 +230,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
