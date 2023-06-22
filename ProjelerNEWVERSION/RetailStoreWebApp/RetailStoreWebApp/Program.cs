@@ -1,7 +1,11 @@
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using RetailStoreWebApp.Business.Concrete;
+using RetailStoreWebApp.Business.Abstract;
 using RetailStoreWebApp.Core.Contexts.Data;
 using RetailStoreWebApp.Core.Mapping;
+using RetailStoreWebApp.DataAccess.Abstract;
+using RetailStoreWebApp.DataAccess.Concrete;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +15,12 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ProjectDatabaseContext>(options => 
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
 );
+
+builder.Services.AddScoped<ICustomerServiceDal, CustomerServiceDal>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+
+builder.Services.AddScoped<IProductServiceDal, ProductServiceDal>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 // Configure AutoMapper
 var mapperConfig = new MapperConfiguration(mc =>

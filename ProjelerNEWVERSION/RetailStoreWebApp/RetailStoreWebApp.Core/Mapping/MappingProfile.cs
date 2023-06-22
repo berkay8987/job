@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using RetailStoreWebApp.Core.Entities.Models;
+using RetailStoreWebApp.Core.Entities.ViewModels;
 
 namespace RetailStoreWebApp.Core.Mapping
 {
@@ -11,7 +13,10 @@ namespace RetailStoreWebApp.Core.Mapping
     {
         public MappingProfile()
         {
-            
+            CreateMap<Customer, CustomerGetModel>();
+            CreateMap<CustomerPutModel, Customer>();
+            CreateMap<Product, ProductGetModel>();
+            CreateMap<ProductPutModel, Product>();
         }
     }
 }

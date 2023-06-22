@@ -15,9 +15,4 @@
     <ProjectReference Include="..\RetailStoreWebApp.DataAccess\RetailStoreWebApp.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="Concrete\" />
-  </ItemGroup>
-
 </Project>

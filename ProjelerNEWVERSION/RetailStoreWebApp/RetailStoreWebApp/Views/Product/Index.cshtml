@@ -1,0 +1,38 @@
+﻿@model IEnumerable<RetailStoreWebApp.Core.Entities.ViewModels.ProductGetModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Products</h1>
+
+<p><a class="btn btn-primary" asp-controller="Product" asp-action="Create">Create New Product</a></p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.PriceUsd)</th>
+            <th>@Html.DisplayNameFor(model => model.PriceTry)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@Html.DisplayFor(modelItem => item.ProductId)</th>
+                <td>@Html.DisplayFor(modelItem => item.ProductName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.PriceUsd)</td>
+                <td>@Html.DisplayFor(modelItem => item.PriceTry)</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Product" asp-action="Edit" asp-route-id="@item.ProductId">Edit</a>
+                    <a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
