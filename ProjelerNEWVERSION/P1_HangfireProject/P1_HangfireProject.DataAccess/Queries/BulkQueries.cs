@@ -17,13 +17,12 @@ namespace P1_HangfireProject.DataAccess.Queries
             sonrasında bu tempi kullanarak update ya da insert yapacaksın
              */
 
-        public string TEMP_TABLE_NAME = "#CustomerTemp";
+        public const string TEMP_TABLE_NAME = "#CustomerTemp";
 
-        public string CREATE_TABLE = @"
+        public const string CREATE_TABLE = @"
             DROP TABLE IF EXISTS #CustomerTemp
 
-            CREATE TABLE #CustomerTemp (
-                    CustomerId INT NOT NULL PRIMARY KEY,
+            CREATE TABLE #CustomerTemp (                   
                     FirstName NVARCHAR(MAX) NOT NULL,
                     LastName NVARCHAR(MAX) NOT NULL,
                     Email NVARCHAR(MAX) NOT NULL,
@@ -32,24 +31,56 @@ namespace P1_HangfireProject.DataAccess.Queries
                 )
         ";
 
-        public string GET_DATA_FROM_OLD_TABLE = @"
-            SELECT * FROM Customers
+        public const string GET_DATA_FROM_OLD_TABLE = @"
+            SELECT FirstName, LastName, Email, IsActive, IsDeleted FROM Customers
         ";
 
-        public string CUSTOMER_BULK_UPDATE = @"
-            INSERT INTO #CustomerTemp
-                (FirstName, LastName, Email, IsActive, IsDeleted)
+        public const string CUSTOMER_BULK_UPDATE = @"
+            UPDATE 
+                new
+            SET 
+                new.FirstName = temp.FirstName,
+                new.LastName = temp.LastName,
+	            new.Email = temp.Email,
+	            new.IsActive = temp.IsActive,
+	            new.IsDeleted = temp.IsDeleted 
+            FROM 
+                CustomersNew new
+                INNER JOIN #CustomerTemp temp ON  new.Email = temp.Email
+            WHERE 
+                HASHBYTES('SHA2_256', CONCAT (
+			            new.[FirstName]
+			            ,new.[LastName]
+			            ,new.[Email]
+			            ,new.[IsActive]
+			            ,new.[IsDeleted]
+			            )) != HASHBYTES('SHA2_256', CONCAT (
+			            temp.[FirstName]
+			            ,temp.[LastName]
+			            ,temp.[Email]
+			            ,temp.[IsActive]
+			            ,temp.[IsDeleted]
+			            ))
+        ";
+
+        public const string CUSTOMER_BULK_UPDATE2 = @"
+            
+            UPDATE 
+                CustomersNew 
+            SET
+                new.FirstName=temp.[FirstName],
+new.LastName=temp.[LastName], new.Email=temp.[Email], new.IsActive=temp.[IsActive], new.IsDeleted=temp.[IsDeleted]
             SELECT 
-                old.[FirstName], old.[LastName], old.[Email], old.[IsActive], old.[IsDeleted]
-            FROM Customers old INNER JOIN #CustomerTemp temp
-            ON old.[CustomerId] = temp.[CustomerId]
+                temp.[FirstName], temp.[LastName], temp.[Email], temp.[IsActive], temp.[IsDeleted]
+            FROM CustomersNew new INNER JOIN #CustomerTemp temp
+            ON new.[CustomerId] = temp.[CustomerId]
             WHERE HASHBYTES('SHA2_256', CONCAT (
-                                old.[CustomerId]
-                                ,old.[FirstName]
-                                ,old.[LastName]
-                                ,old.[Email]
-                                ,old.[IsActive]
-                                ,old.[IsDeleted]
+                                new.[CustomerId]
+                                ,new.[FirstName]
+                                ,new.[LastName]
+                                ,new.[Email]
+                                ,new.[IsActive]
+                                ,new.[IsDeleted]
 
                                 )) != HASHBYTES('SHA2_256', CONCAT (
                                 temp.[CustomerId]
@@ -59,12 +90,17 @@ namespace P1_HangfireProject.DataAccess.Queries
                                 ,temp.[IsActive]
                                 ,temp.[IsDeleted]
                                 ))
+        
         ";
 
-        public string CUSTOMER_BULK_INSERT = @"";
-
-        public string CUSTOMER_BULK_DELETE = @"";
-
-        public string CUSTOMER_BULK_READ   = @"";
+        public const string CUSTOMER_BULK_INSERT = @"
+            INSERT INTO CustomersNew
+                (new.FirstName, new.LastName, new.Email, new.IsActive, new.IsDeleted)
+            SELECT 
+                temp.[FirstName], temp.[LastName], temp.[Email], temp.[IsActive], temp.[IsDeleted]
+            FROM CustomersNew new RIGHT JOIN #CustomerTemp temp
+            ON  temp.[Email] = new.[Email]
+            WHERE new.[CustomerId] is NULL;
+        ";
     }
 }

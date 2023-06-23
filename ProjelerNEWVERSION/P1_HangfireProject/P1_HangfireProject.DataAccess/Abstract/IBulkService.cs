@@ -14,6 +14,6 @@ namespace P1_HangfireProject.DataAccess.Abstract
     {
         DataTable GetDataAsDataTablev2(SqlConnection connection);
 
-        bool BulkOperationsUpdate();
+        bool BulkOperations();
     }
 }

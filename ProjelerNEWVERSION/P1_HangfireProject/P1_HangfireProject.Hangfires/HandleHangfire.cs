@@ -66,7 +66,7 @@ namespace P1_HangfireProject.Hangfires
 
         public void Test()
         {
-            _bulkService.BulkOperationsUpdate();
+            _bulkService.BulkOperations();
         }
     }
 }
