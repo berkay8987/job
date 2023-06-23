@@ -33,7 +33,7 @@ namespace RetailStoreWebApp.DataAccess.Concrete
         public Product? GetProductByNameDal(string productName)
         {
             return _context.Products
-                .Where(x => x.ProductName == productName)
+                .Where(x => x.ProductName == productName && x.IsActive == 1 && x.IsDeleted == 0)
                 .SingleOrDefault();
         }
 

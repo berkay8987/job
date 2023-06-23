@@ -62,6 +62,7 @@ namespace RetailStoreWebApp.Business.Concrete
             if (tempProduct2 != null)
             {
                 _productServiceDal.ReactivateProductDal(tempProduct2);
+                return;
             }
 
             var productToAdd = _mapper.Map<ProductPostModel, Product>(productPostModel);

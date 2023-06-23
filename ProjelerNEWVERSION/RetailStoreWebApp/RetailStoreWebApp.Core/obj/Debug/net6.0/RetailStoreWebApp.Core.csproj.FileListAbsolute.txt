@@ -12,3 +12,17 @@ C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debu
 C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\ref\RetailStoreWebApp.Core.dll
 C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Core\bin\Debug\net6.0\RetailStoreWebApp.Core.runtimeconfig.json
 C:\Users\STJ80354\source\repos\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.genruntimeconfig.cache
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\bin\Debug\net6.0\RetailStoreWebApp.Core.deps.json
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\bin\Debug\net6.0\RetailStoreWebApp.Core.runtimeconfig.json
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\bin\Debug\net6.0\RetailStoreWebApp.Core.dll
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\bin\Debug\net6.0\RetailStoreWebApp.Core.pdb
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.csproj.AssemblyReference.cache
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.AssemblyInfoInputs.cache
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.AssemblyInfo.cs
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.dll
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\refint\RetailStoreWebApp.Core.dll
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.pdb
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\RetailStoreWebApp.Core.genruntimeconfig.cache
+C:\Users\STJ80354\Documents\GitHub\job\ProjelerNEWVERSION\RetailStoreWebApp\RetailStoreWebApp.Core\obj\Debug\net6.0\ref\RetailStoreWebApp.Core.dll
